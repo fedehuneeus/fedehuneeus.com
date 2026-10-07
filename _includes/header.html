@@ -4,7 +4,10 @@
     <nav class="nav-left" aria-label="Primary">
       {% for item in nav.left %}<a href="{{ item.url | relative_url }}" data-section="{{ item.url | split:'#' | last }}">{{ item.label }}</a>{% endfor %}
     </nav>
-    <a class="site-title" href="{{ '/' | relative_url }}">{{ site.title }}</a>
+    <div class="site-title-wrap">
+      <a class="site-title" href="{{ '/' | relative_url }}">{{ site.title }}</a>
+      {% if page.body_class == "home" and site.data.hero.tagline and site.data.hero.tagline != "" %}<p class="site-tagline">{{ site.data.hero.tagline }}</p>{% endif %}
+    </div>
     <nav class="nav-right" aria-label="Primary continued">
       {% for item in nav.right %}<a href="{{ item.url | relative_url }}" data-section="{{ item.url | split:'#' | last }}">{{ item.label }}</a>{% endfor %}
     </nav>

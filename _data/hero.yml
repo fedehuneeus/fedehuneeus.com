@@ -1,7 +1,7 @@
 # Photos of the slideshow at the top of the home page (in order).
 # Drop a new JPG in assets/img/ and add a line here.
 interval_seconds: 6
-# One line shown over the photos, under the name. Leave empty ("") to hide it.
+# One line shown right under the name at the top of the photos. Leave empty ("") to hide it.
 tagline: "Trade economist · Duke University · Central Bank of Chile"
 slides:
   - { image: /assets/img/hero-cordillera.jpg, alt: "Cordillera de los Andes, Santiago" }

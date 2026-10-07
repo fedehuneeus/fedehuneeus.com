@@ -1,0 +1,16 @@
+{% comment %} One research item. usage: {% include paper.html p=item %} {% endcomment %}
+{% assign p = include.p %}
+<article class="paper">
+  <p class="paper-title">{% if p.pdf %}<a href="{{ p.pdf | relative_url }}"{% if p.pdf contains 'http' %} target="_blank" rel="noopener"{% endif %}>{{ p.title }}</a>{% else %}{{ p.title }}{% endif %}</p>
+  {% if p.authors or p.links or p.status or p.journal %}
+  <p class="paper-meta">
+    {%- if p.authors %}with {% for a in p.authors %}{% if a.url %}<a href="{{ a.url }}" target="_blank" rel="noopener">{{ a.name }}</a>{% else %}{{ a.name }}{% endif %}{% unless forloop.last %}, {% endunless %}{% endfor %}{% endif -%}
+    {%- for l in p.links %} | <a href="{{ l.url | relative_url }}"{% if l.url contains 'http' %} target="_blank" rel="noopener"{% endif %}>{{ l.label }}</a>{% endfor -%}
+    {%- if p.status %} | <em>{{ p.status }}</em>{% endif -%}
+    {%- if p.journal %} | <em>{{ p.journal }}</em>{% endif -%}
+  </p>
+  {% endif %}
+  {% for line in p.awards %}<p class="paper-award"><em>{{ line }}</em></p>{% endfor %}
+  {% for line in p.extra %}<p class="paper-extra">{{ line }}</p>{% endfor %}
+  {% if p.abstract %}<details class="paper-abstract"><summary>Abstract</summary><p>{{ p.abstract }}</p></details>{% endif %}
+</article>

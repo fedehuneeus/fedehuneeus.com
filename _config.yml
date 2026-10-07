@@ -1,0 +1,18 @@
+# Site settings — edit these freely
+title: Federico Huneeus
+description: "Federico Huneeus — trade economist specializing in productivity, inequality, and production networks. Assistant Professor of Economics at Duke University and Senior Economist at the Central Bank of Chile."
+url: "https://www.fedehuneeus.com"
+baseurl: ""
+lang: en
+author: Federico Huneeus
+
+# Build settings (GitHub Pages builds this automatically; nothing to install)
+markdown: kramdown
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+  - preview.py
+  - vendor
+  - node_modules
+  - .DS_Store

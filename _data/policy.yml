@@ -1,0 +1,82 @@
+# POLICY — newest first.
+# Fields: title, pdf, date, authors (list of {name,url}), summary, details (HTML, shown after "Details:")
+- title: Matching Administrative Records and Household Surveys in Chile
+  pdf: "https://www.bcentral.cl/web/banco-central/contenido/-/detalle/documento-de-trabajo-1034"
+  date: December 2024
+  authors:
+    - { name: Alfonso Barrero }
+    - { name: Cesar Ferreiro }
+    - { name: Mario Giarda,     url: "https://www.mariogiarda.com/" }
+    - { name: Claudia Henriquez }
+    - { name: Manuel Taboada,   url: "https://econ.columbia.edu/phd/phd-student-directory/directory-phd-student-2024-year/" }
+
+- title: "Anatomy of Firms' Margins of Adjustment: Evidence from the COVID Pandemic"
+  pdf: /s/policy/AFGHMdescriptive.pdf
+  date: May 2023
+  authors:
+    - { name: Elias Albagli,     url: "https://www.bcentral.cl/en/web/banco-central/the-bank/corporative-goverment/people/elias-albagli" }
+    - { name: Andres Fernandez,  url: "https://sites.google.com/site/andresfernandezmartin8/" }
+    - { name: Juan Guerra-Salas, url: "https://www.juanguerrasalas.com" }
+    - { name: Pablo Muñoz,       url: "https://www.linkedin.com/in/pgmunoz/" }
+  details: '<a href="https://www.bcentral.cl/en/content/-/details/working-papers-n-981">Central Bank Working Paper 981</a>'
+
+- title: Firms during the COVID-19 Crisis (Spanish)
+  pdf: /s/policy/Separata_Covid_19_y_empresas.pdf
+  date: March 2023
+  summary: Evidence on how firms responded to the COVID-19 crisis
+
+- title: Relevance of Global Supply Chains for Inflation and Monetary Policy (Spanish)
+  pdf: /s/policy/NDD3_Nov22.pdf
+  date: November 2022
+  summary: Evidence on the role of global supply chains for inflation in the context of geopolitical and environmental disruptions
+  details: '<a href="/s/policy/NDD3_Nov22_ENG.pdf">English version</a>'
+
+- title: Financial Intermediation and Central Banking in Chile (Spanish)
+  pdf: /s/policy/Intermediacion_Financiera_y_Banca_Central_en_Chile.pdf
+  date: December 2021
+  summary: Evidence on the interaction between financial and monetary policies
+
+- title: Productivity in the Last Decades and during the Pandemic (Spanish)
+  pdf: /s/policy/IPoM_Junio_2021_recuadroV1.pdf
+  date: June 2021
+  summary: The 2010 decade was lost in terms of productivity while productivity increased during the pandemic, both facts driven by firm dynamics
+  details: '<a href="https://www.bcentral.cl/contenido/-/detalle/informe-de-politica-monetaria-junio-2021">Full monetary policy report (IPoM)</a> - <a href="/s/policy/Minutas_Citadas_en_Recuadros_IPoM_Junio_2021_PTF_Macro.pdf">Technical report: Macro TFP</a> - <a href="/s/policy/Minutas_Citadas_en_Recuadros_IPoM_Junio_2021_PTF_Micro.pdf">Technical report: Micro TFP</a> - <a href="https://twitter.com/FedericoHuneeus/status/1403014336113696771">Twitter Summary Thread</a>'
+
+- title: Firm Dynamics and Creation/Destruction of Linkages during the Pandemic (Spanish)
+  pdf: /s/policy/IPoM_Marzo_2021_recuadro_firmas.pdf
+  date: March 2021
+  summary: Significant re-entry of firms during the Pandemic and also significant churning of linkages, using rich administrative datasets from Chile
+  details: '<a href="https://www.bcentral.cl/contenido/-/detalle/informe-de-politica-monetaria-marzo-2021-1">Full monetary policy report (IPoM)</a>'
+
+- title: Demand and Supply Sources of Inflation Dynamics (Spanish)
+  pdf: /s/policy/rec_IV1_dinamica_inflacionaria.pdf
+  date: December 2020
+  summary: How inventories and destruction of productive relationships might be drivers of inflation, using rich administrative datasets from Chile
+  details: '<a href="https://www.bcentral.cl/en/content/-/details/monetary-policy-report-decermber-2020-summary">Full monetary policy report (IPoM)</a>'
+
+- title: "Firms Response to COVID-19: Micro-Evidence from Chile (Spanish)"
+  pdf: /s/policy/Rec_shock_pandemia.pdf
+  date: September 2020
+  summary: "Sales and credit behavior during the pandemic using micro-data from Chile's credit registry and firm-to-firm transactions"
+  details: '<a href="https://www.bcentral.cl/en/content/-/details/monetary-policy-report-september-2020">Full monetary policy report (IPoM)</a> - <a href="/s/policy/Minuta-Citada-IPoM-Septiembre-2020.pdf">Technical report</a>'
+
+- title: Financing Firms in Hibernation during the COVID-19 Pandemic
+  pdf: /s/policy/Financing-Firms-in-Hibernation-During-the-COVID-19-Pandemic.pdf
+  date: April 2020
+  summary: Trade-offs of different financial policies to address the challenge of financing firms during the COVID-19 pandemic
+  details: '<a href="http://documents.worldbank.org/curated/en/228811586799856319/Financing-Firms-in-Hibernation-During-the-COVID-19-Pandemic">World Bank Report Website</a> - <a href="https://voxeu.org/article/keeping-firms-afloat-during-covid-19-crisis">VoxEU</a>'
+
+- title: Human Capital and Labor Income in Chile (Spanish)
+  pdf: /s/policy/Nota-Tecnica-9-Resultados-del-Estudio-CNP.pdf
+  date: January 2018
+  summary: 'Descriptive statistics using administrative data. For the <a href="http://www.comisiondeproductividad.cl/">National Productivity Commission</a> of the <a href="https://www.gob.cl/">Chilean Government</a>'
+
+- title: Towards a Preventive System of Mergers in Chile (Spanish)
+  pdf: /s/policy/tips_control_fusiones_abril_2015.pdf
+  date: April 2015
+  summary: Review of the regulation of mergers in Chile and proposals for a new preventive (ex-ante) system of merger evaluation
+
+- title: "For-Profit in the Education System: Evidence and Regulatory Challenges (Spanish)"
+  pdf: /s/policy/tips_lucro_septiembre_2011.pdf
+  date: September 2011
+  summary: Literature and evidence review of for-profit institutions in the educational system

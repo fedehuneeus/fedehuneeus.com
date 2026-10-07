@@ -1,0 +1,560 @@
+<meta charset="utf-8">
+<title>Reformas económicas en Chile</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,500;0,600;1,500&family=Source+Sans+3:ital,wght@0,400;0,600;1,400&display=swap">
+<style>
+:root{
+  color-scheme:light;
+  --bg:#f7f4ec; --bg-2:#efeadd; --ink:#1d2430; --ink-2:#4d5566; --ink-3:#7b8290;
+  --line:#d9d3c4; --azul:#1f4e7a; --rojo:#b0392b; --verde:#1d7a4c; --amarillo:#c98500;
+  --card:#fbf9f4; --box-r:#f6e7e3; --box-g:#e6f1ea; --shade-r:rgba(176,57,43,.10); --shade-g:rgba(29,122,76,.12);
+  --s1:#2a78d6; --s2:#eb6834; --s3:#1baf7a; --s4:#eda100; --s8:#e34948; --sn:#8a8f9a;
+  --grid:#e6e1d4; --focus:#2a78d6;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    color-scheme:dark;
+    --bg:#16181d; --bg-2:#1e2129; --ink:#eceef2; --ink-2:#b7bcc7; --ink-3:#8b919e;
+    --line:#333844; --azul:#8fb6e0; --rojo:#e88a7c; --verde:#6cc79a; --amarillo:#e6b04a;
+    --card:#1c1f26; --box-r:#2b2022; --box-g:#1d2a24; --shade-r:rgba(232,138,124,.14); --shade-g:rgba(108,199,154,.14);
+    --s1:#3987e5; --s2:#d95926; --s3:#199e70; --s4:#c98500; --s8:#e66767; --sn:#9aa0ad; --grid:#2a2e38;
+  }
+}
+:root[data-theme="dark"]{
+  color-scheme:dark;
+  --bg:#16181d; --bg-2:#1e2129; --ink:#eceef2; --ink-2:#b7bcc7; --ink-3:#8b919e;
+  --line:#333844; --azul:#8fb6e0; --rojo:#e88a7c; --verde:#6cc79a; --amarillo:#e6b04a;
+  --card:#1c1f26; --box-r:#2b2022; --box-g:#1d2a24; --shade-r:rgba(232,138,124,.14); --shade-g:rgba(108,199,154,.14);
+  --s1:#3987e5; --s2:#d95926; --s3:#199e70; --s4:#c98500; --s8:#e66767; --sn:#9aa0ad; --grid:#2a2e38;
+}
+html,body{height:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"Source Sans 3",system-ui,-apple-system,"Segoe UI",sans-serif;font-size:18px;line-height:1.4;overflow:hidden}
+*{box-sizing:border-box}
+h1,h2,h3{font-family:Lora,Georgia,"Times New Roman",serif;font-weight:600;text-wrap:balance;margin:0}
+p{margin:0}
+.viewport{position:fixed;inset:0;display:grid;place-items:center;padding:0 16px;padding-block:env(safe-area-inset-top,0px) env(safe-area-inset-bottom,0px)}
+.stage{position:relative;width:1280px;height:720px;transform-origin:center center;background:var(--bg)}
+.slide{position:absolute;inset:0;padding:48px 64px 56px;display:none;flex-direction:column;gap:18px}
+.slide.active{display:flex}
+.slide h2{font-size:38px;color:var(--azul);line-height:1.15}
+.slide .body{flex:1;min-height:0;display:flex;flex-direction:column;gap:14px;font-size:21px}
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:36px;align-items:start}
+ul.list{margin:0;padding-left:26px;display:flex;flex-direction:column;gap:12px}
+ul.list li::marker{color:var(--azul)}
+ol.list{margin:0;padding-left:28px;display:flex;flex-direction:column;gap:14px}
+.slide .body>ul.list,.slide .body>ol.list{flex:1;justify-content:space-evenly}
+.slide .body>.two+ul.list{flex:1;justify-content:space-evenly}
+.pag{font-size:.7em;color:var(--ink-3);white-space:nowrap}
+.lit{font-size:.78em;color:var(--ink-3)}
+.cita{font-family:Lora,Georgia,serif;font-style:italic;font-size:19px;color:var(--ink-2);border-left:3px solid var(--azul);padding:4px 0 4px 16px;margin:4px 0}
+.cita .who{display:block;font-style:normal;font-family:"Source Sans 3",sans-serif;font-size:14px;color:var(--ink-3);margin-top:6px;text-align:right}
+.frag{opacity:0;transform:translateY(6px);transition:opacity .45s ease,transform .45s ease}
+.frag.on{opacity:1;transform:none}
+.stage.static .frag{opacity:1;transform:none}
+.foot{font-size:13px;color:var(--ink-3);line-height:1.35}
+.hint{position:absolute;left:64px;bottom:20px;font-size:13px;color:var(--ink-3)}
+.num{position:absolute;right:64px;bottom:20px;font-size:13px;color:var(--ink-3);font-variant-numeric:tabular-nums}
+.progress{position:absolute;left:0;bottom:0;height:3px;background:var(--azul);transition:width .3s ease}
+.title{justify-content:center;align-items:center;text-align:center;gap:26px}
+.title h1{font-size:60px;color:var(--azul);max-width:900px}
+.title .sub{font-size:28px;color:var(--ink-2)}
+.title .meta{font-size:20px;color:var(--ink-3);display:flex;flex-direction:column;gap:6px}
+.kicker{font-size:14px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-3)}
+.box{border-radius:10px;padding:16px 20px;font-size:19px}
+.box h3{font-size:22px;margin-bottom:6px}
+.box.r{background:var(--box-r);border:1px solid color-mix(in srgb,var(--rojo) 40%,transparent)}
+.box.r h3{color:var(--rojo)}
+.box.g{background:var(--box-g);border:1px solid color-mix(in srgb,var(--verde) 40%,transparent)}
+.box.g h3{color:var(--verde)}
+.banner{background:var(--box-g);border-radius:10px;padding:18px 24px;font-size:21px;line-height:1.4}
+.banner .big{display:block;font-family:Lora,Georgia,serif;font-weight:600;color:var(--azul);font-size:24px;margin-top:10px;text-align:center}
+.center{text-align:center}
+.emph{color:var(--azul);font-weight:600}
+table.t{border-collapse:collapse;font-size:18px;font-variant-numeric:tabular-nums}
+table.t th,table.t td{padding:6px 14px;text-align:left;border-bottom:1px solid var(--line);vertical-align:top}
+table.t th{font-weight:600;color:var(--ink-2);font-size:15px;letter-spacing:.03em;text-transform:uppercase}
+table.t td.n,table.t th.n{text-align:right}
+table.t tr.hi td{color:var(--verde);font-weight:600}
+.chart{position:relative}
+.chart svg{display:block;width:100%;height:auto;overflow:visible;font-family:"Source Sans 3",sans-serif}
+.chart .ax{stroke:var(--line);stroke-width:1}
+.chart .gr{stroke:var(--grid);stroke-width:1}
+.chart .tk{fill:var(--ink-3);font-size:13px}
+.chart .lb{fill:var(--ink-2);font-size:14px}
+.chart .lb.b{font-weight:600}
+.chart .yr{fill:var(--ink-3);font-size:26px;font-family:Lora,Georgia,serif;font-weight:600}
+.ctl{display:flex;gap:10px;align-items:center;flex-wrap:wrap;font-size:14px;color:var(--ink-3)}
+button.btn{font:inherit;font-size:14px;color:var(--azul);background:var(--card);border:1px solid var(--line);border-radius:999px;padding:5px 14px;cursor:pointer}
+button.btn:hover{border-color:var(--azul)}
+button.btn:focus-visible,.navbtn:focus-visible,details summary:focus-visible{outline:2px solid var(--focus);outline-offset:2px}
+.legend{display:flex;gap:16px;flex-wrap:wrap;font-size:14px;color:var(--ink-2)}
+.legend span{display:inline-flex;align-items:center;gap:6px}
+.legend i{display:inline-block;width:18px;height:3px;border-radius:2px}
+.legend i.d{background:repeating-linear-gradient(90deg,currentColor 0 4px,transparent 4px 7px)}
+.tip{position:absolute;pointer-events:none;background:var(--card);border:1px solid var(--line);border-radius:6px;padding:6px 10px;font-size:13px;color:var(--ink);box-shadow:0 2px 8px rgba(0,0,0,.12);display:none;white-space:nowrap;z-index:5}
+.tip b{font-variant-numeric:tabular-nums}
+details.data{font-size:13px;color:var(--ink-2)}
+details.data summary{cursor:pointer;color:var(--ink-3)}
+details.data table{margin-top:6px;border-collapse:collapse;font-variant-numeric:tabular-nums}
+details.data td,details.data th{padding:2px 8px;border-bottom:1px solid var(--line);text-align:right}
+details.data th:first-child,details.data td:first-child{text-align:left}
+.nav{position:fixed;right:16px;bottom:calc(16px + env(safe-area-inset-bottom,0px));display:flex;gap:8px;z-index:10}
+.navbtn{font:inherit;font-size:15px;color:var(--ink-2);background:var(--card);border:1px solid var(--line);border-radius:8px;width:40px;height:36px;cursor:pointer}
+.navbtn:hover{border-color:var(--azul);color:var(--azul)}
+.tl{display:flex;flex-direction:column;gap:6px}
+.stack{display:grid;gap:10px}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:28px}
+@media (max-width:700px){
+  body{overflow:auto}
+  .viewport{position:static;display:block;padding:0 16px;padding-block:env(safe-area-inset-top,0px) env(safe-area-inset-bottom,0px)}
+  .stage{width:100%;height:auto;transform:none!important}
+  .slide{position:static;display:flex;padding:28px 0;border-bottom:1px solid var(--line);font-size:16px}
+  .slide h2{font-size:26px}
+  .slide .body{font-size:17px}
+  .title h1{font-size:34px}.title .sub{font-size:20px}
+  .cols,.two{grid-template-columns:1fr}
+  .frag{opacity:1;transform:none}
+  .hint,.num,.progress{display:none}
+  .nav{display:none}
+}
+@media (prefers-reduced-motion: reduce){.frag{transition:none}}
+</style>
+
+<div class="viewport"><div class="stage" id="stage">
+
+<!-- 1 Portada -->
+<section class="slide title" data-steps="0">
+  <h1>Reformas económicas en Chile, 1973–2024</h1>
+  <p class="sub">de Ricardo Ffrench-Davis</p>
+  <div class="meta"><span>Discusión de Federico Huneeus</span><span>29 de septiembre de 2026</span></div>
+</section>
+
+<!-- 2 Sobre Ricardo -->
+<section class="slide" data-steps="8">
+  <h2>Sobre Ricardo</h2>
+  <div class="body"><ul class="list" style="gap:10px">
+    <li class="frag" data-step="1">Un honor discutir esta edición definitiva de una obra que empezó en 1999</li>
+    <li class="frag" data-step="2">Su estudiante de economía del desarrollo en la FEN; después, su ayudante</li>
+    <li class="frag" data-step="3">Mentor de generaciones de economistas, ~60 años de profesor
+      <ul class="list" style="margin-top:6px;font-size:.9em"><li>(Contexto) Primer computador en Chile en 1961: IBM 1401, con 4 KB de memoria</li></ul></li>
+    <li class="frag" data-step="4">Nunca quiso escribir sus memorias</li>
+    <li class="frag" data-step="5">Este libro es lo más cercano a ellas: su pensamiento en 50 años de reformas</li>
+    <li class="frag" data-step="6">Lo refleja completamente: riguroso, sobrio, cientista social, humanista</li>
+    <li class="frag" data-step="7">Un latinoamericanista y estructuralista, del nivel de Prebisch, Sunkel y Pinto
+      <ul class="list" style="margin-top:6px;font-size:.9em"><li>Y un macroeconomista de verdad, que se refiere al tiempo en trimestres</li></ul></li>
+    <li class="frag" data-step="8">Post de memorias: cuenta tu historia de Ricardo</li>
+  </ul></div>
+</section>
+
+<!-- 6 Adelantado a su época -->
+<section class="slide" data-steps="6">
+  <h2>Adelantado a su época: la academia lo fue alcanzando</h2>
+  <div class="body">
+    <table class="t" style="font-size:17px">
+      <thead><tr><th>Idea en la obra de Ricardo</th><th>Cuándo</th><th>Literatura que la formaliza</th></tr></thead>
+      <tbody>
+        <tr class="frag" data-step="1"><td>Flexibilidad cambiaria administrada (<i>crawling peg</i>)</td><td>1965–70; 1981</td><td>Williamson (1981, 2000); Rodrik (2008)</td></tr>
+        <tr class="frag" data-step="2"><td>Crítica al tipo de cambio fijo con apertura financiera (“el experimento monetarista”)</td><td>1982</td><td>Díaz-Alejandro (1985); Calvo (1998)</td></tr>
+        <tr class="frag" data-step="3"><td>Regulación contracíclica de flujos de capital (encaje)</td><td>1991–95</td><td>Ostry et al. (2010, FMI); Korinek (2011); Rey (2013)</td></tr>
+        <tr class="frag" data-step="4"><td>Recesiones con efectos permanentes; medir el crecimiento entre cimas</td><td>desde 1999</td><td>Cerra y Saxena (2008); Blanchard, Cerutti y Summers (2015); Cerra, Fatás y Saxena (2023)</td></tr>
+        <tr class="frag" data-step="5"><td>“Del financierismo al productivismo”</td><td>2005, 2010</td><td>Macro para el desarrollo en CEPAL (Ocampo 2011)</td></tr>
+      </tbody>
+    </table>
+    <ul class="list frag" data-step="6" style="margin-top:10px">
+      <li>Ideas que nacieron en la práctica de la política económica</li>
+      <li>Y han ido lentamente formalizándose y discutiéndose en la academia</li>
+    </ul>
+  </div>
+</section>
+
+<!-- 3 Un libro, una idea -->
+<section class="slide" data-steps="7">
+  <h2>Un libro, una idea: macroeconomía para el desarrollo</h2>
+  <div class="body">
+    <p class="frag" data-step="1">Ricardo ayudó a construir: <span class="emph">macroeconomía para el desarrollo</span> (Ffrench-Davis 2005, 2010; Ocampo 2011) <span class="pag">(p. 539)</span></p>
+    <blockquote class="cita frag" data-step="1">“La estabilidad del nivel de precios es muy relevante, pero constituye solo uno de los ingredientes de la estabilidad macroeconómica. La estabilidad de la economía real implica lograr que el producto efectivo transite en torno a la capacidad productiva o PIB potencial en un marco de macroprecios sostenibles”<span class="who">Ffrench-Davis (2026), p. 538</span></blockquote>
+    <ul class="list" style="gap:8px">
+      <li class="frag" data-step="2">Una macro de mediano plazo, más allá de la estabilización keynesiana</li>
+      <li class="frag" data-step="3">Una macro con fundamentos micro, que mira la estructura de la economía</li>
+      <li class="frag" data-step="4">Cómo el ciclo económico impacta a la tendencia</li>
+      <li class="frag" data-step="5">Cómo la macro del ciclo económico impacta el desarrollo económico</li>
+      <li class="frag" data-step="6">Recién ahora el NBER discute crear un grupo de Macro-Development</li>
+      <li class="frag" data-step="7">Foco: describir esta visión de Ricardo y reflejarla en una aplicación del libro</li>
+    </ul>
+  </div>
+</section>
+
+<!-- 4 Dos enfoques + línea de tiempo -->
+<section class="slide" data-steps="7" data-chart="timeline">
+  <h2>Macroeconomía para el desarrollo ⇒ dos enfoques</h2>
+  <div class="body">
+    <div class="cols">
+      <div class="frag" data-step="1">
+        <h3 style="color:var(--rojo);font-size:22px">Enfoque “financierista” <span class="pag">(p. 222, 539)</span></h3>
+        <ul class="list" style="margin-top:8px;font-size:19px;gap:6px">
+          <li>Equilibrio macro = inflación baja + disciplina fiscal</li>
+          <li>Tipo de cambio libre, cuenta de capitales abierta</li>
+          <li>El resto lo resuelve el mercado</li>
+        </ul>
+      </div>
+      <div class="frag" data-step="2">
+        <h3 style="color:var(--verde);font-size:22px">Enfoque “productivista” <span class="pag">(p. 124, 222, 538)</span></h3>
+        <ul class="list" style="margin-top:8px;font-size:19px;gap:6px">
+          <li>Inflación controlada necesaria, no suficiente</li>
+          <li>Brecha PIB efectivo–potencial como variable de equilibrio <span class="pag">(p. 222)</span></li>
+          <li>Macro real no es solo deflactar</li>
+          <li>Macroprecios sostenibles (ej., TCR)</li>
+          <li>Foco en transformación productiva</li>
+        </ul>
+      </div>
+    </div>
+    <div class="chart" id="timeline" style="margin-top:2px"></div>
+    <p class="foot center">Crecimiento anual del PIB por subperíodo, medido entre cimas de uso de capacidad <span class="pag">(p. 49, 123)</span></p>
+    <p class="frag" data-step="7">Brecha recesiva PIB efectivo–potencial no es un costo transitorio: deprime la inversión y el PIB potencial futuro <span class="pag">(p. 58, 222)</span></p>
+  </div>
+</section>
+
+<!-- 5 Tres mecanismos -->
+<section class="slide" data-steps="4">
+  <h2>Macro con fundamentos micro: tres mecanismos</h2>
+  <div class="body"><ol class="list">
+    <li class="frag" data-step="1"><b>Inversión irreversible bajo incertidumbre:</b> con capacidad ociosa no se crea capacidad nueva. Inversión de 15,7% del PIB en 1974–89, contra 20,2% en los sesenta y 25,1% en 1994–99 (pesos de 1977) <span class="pag">(p. 28, 44, 51, 58)</span><br><span class="lit">Dixit y Pindyck (1994); Bloom (2009)</span></li>
+    <li class="frag" data-step="2"><b>El tipo de cambio real como asignador:</b> entre transables y no transables; su inestabilidad castiga exportaciones no tradicionales y valor agregado <span class="pag">(p. 267, 280, 550)</span><br><span class="lit">Rodrik (2008); Guzmán, Ocampo y Stiglitz (2018)</span></li>
+    <li class="frag" data-step="3"><b>Heterogeneidad estructural:</b> las políticas “neutrales” no son neutrales; los ajustes recesivos recaen sobre pymes y trabajadores menos calificados <span class="pag">(p. 127, 233, 527)</span> ⇒ crecimiento inclusivo<br><span class="lit">Hsieh y Klenow (2009); Kaplan, Moll y Violante (2018)</span></li>
+  </ol>
+  <p class="center frag" data-step="4" style="margin-top:8px">Los tres comparten una idea: <span class="emph">el ciclo puede mover la tendencia</span></p></div>
+</section>
+
+<!-- 7 Usar vs crear capacidad -->
+<section class="slide" data-steps="5">
+  <h2>Usar capacidad versus crear capacidad</h2>
+  <div class="body">
+    <div class="two">
+      <div class="box r frag" data-step="1"><h3>Uso de capacidad</h3>el PIB efectivo cierra la brecha con un PIB potencial dado<p style="font-weight:600;color:var(--rojo);margin-top:8px">⇒ Recuperación</p></div>
+      <div class="box g frag" data-step="2"><h3>Creación de capacidad</h3>el PIB potencial se desplaza por inversión y productividad<p style="font-weight:600;color:var(--verde);margin-top:8px">⇒ Crecimiento</p></div>
+    </div>
+    <ul class="list" style="margin-top:10px;gap:16px">
+      <li class="frag" data-step="3">Regla del libro: medir el crecimiento <b>entre cimas</b> de uso de capacidad, no desde un fondo recesivo <span class="pag">(p. 49, 84, 403)</span></li>
+      <li class="frag" data-step="4">Caso: 1985–89 y 1990–94 crecieron 6,4% y 7,3% anual (De Gregorio 2004)</li>
+      <li class="frag" data-step="5">¿Dos éxitos similares?</li>
+    </ul>
+  </div>
+</section>
+
+<!-- 8 Brecha -->
+<section class="slide" data-steps="4" data-chart="gap">
+  <h2>1982–97: de la recuperación a la expansión</h2>
+  <div class="body">
+    <div class="cols" style="grid-template-columns:1fr 1.15fr">
+      <ul class="list" style="font-size:18px;gap:10px">
+        <li class="frag" data-step="1">1982: PIB −14%, la caída más intensa de la región <span class="pag">(p. 199)</span></li>
+        <li class="frag" data-step="1">Entre cimas (1981–89) el PIB creció solo 2,9% anual: reutilizar capacidad <span class="pag">(p. 200, 207)</span></li>
+        <li class="frag" data-step="1">Salarios reales: recién en 1991 superan el nivel de 1981 <span class="pag">(p. 219)</span></li>
+        <li class="frag" data-step="2">Inversión de 17,3% del PIB en 1974–89 versus 25,2% en 1990–98 <span class="pag">(p. 30, 317)</span></li>
+        <li class="frag" data-step="3">Brecha recesiva de 20% en 1982–83, la mayor de la región <span class="pag">(p. 49)</span></li>
+        <li class="frag" data-step="3">1988–89 cierra la brecha con impulsos transitorios (cobre al doble, rebajas tributarias, gasto pre-plebiscito); inflación de 31% anual a inicios de 1990 <span class="pag">(p. 53, 224)</span></li>
+        <li class="frag" data-step="4">1990–97: el PIB efectivo crece pegado al potencial; la brecha se cierra y no se reabre <span class="pag">(p. 345)</span></li>
+      </ul>
+      <div>
+        <div class="chart" id="gap"></div>
+        <div class="ctl" style="margin-top:6px"><span>PIB per cápita, índice 1981 = 100</span><button class="btn" data-replay="gap">↻ Reproducir</button></div>
+        <details class="data"><summary>Ver datos</summary><div id="gap-table"></div></details>
+      </div>
+    </div>
+    <p class="foot">1981–89: Ffrench-Davis (2026), cuadro IV.2 (p. 205). 1990–97: extensión propia con las tasas promedio del cuadro IX.1 (p. 367: efectivo 7,8% y potencial 7,6% en 1990–95; 5,7% y 6,7% en 1996–98), per cápita con población del Banco Mundial; oscilaciones anuales del PIB efectivo según las tasas oficiales anuales (Banco Central, vía WDI) centradas en esos promedios</p>
+  </div>
+</section>
+
+<!-- 9 Contabilidad del crecimiento -->
+<section class="slide" data-steps="3" data-chart="growth">
+  <h2>Desarrollo más allá del crecimiento</h2>
+  <div class="body">
+    <div class="ctl"><span>Contribución al crecimiento del PIB, puntos porcentuales por año</span>
+      <button class="btn" data-replay="growth">↻ Reproducir</button></div>
+    <div class="chart" id="growth"></div>
+    <div class="legend" style="justify-content:center"><span><i style="background:var(--s2)"></i>trabajo</span><span><i style="background:var(--s1)"></i>capital</span><span><i style="background:var(--s3)"></i>PTF</span></div>
+    <ul class="list" style="font-size:19px">
+      <li class="frag" data-step="1">1985–89: domina <b style="color:var(--s2)">trabajo</b>: desempleo de 31% en 1983 a ~6% en los noventa <span class="pag">(p. 49, 66)</span></li>
+      <li class="frag" data-step="2">1990–94: dominan <b style="color:var(--s1)">capital</b> y <b style="color:var(--s3)">PTF</b>: inversión de 17% a 25% del PIB <span class="pag">(p. 30, 345–346)</span></li>
+      <li class="frag" data-step="3">No es pro-empleo versus pro-capital, sino recuperación versus expansión</li>
+    </ul>
+    <p class="foot">De Gregorio (2004), DTBC N°298, cuadro 4. La PTF de 1985–89 incluye mayor uso de capacidad</p>
+  </div>
+</section>
+
+<!-- 10 La prueba -->
+<section class="slide" data-steps="7">
+  <h2>No fueron las exportaciones, sino la macro interna</h2>
+  <div class="body"><div class="cols" style="grid-template-columns:1fr 1.15fr">
+    <div>
+      <p><b>Cuadro I.4 <span class="pag">(p. 55)</span>: crecimiento anual, %</b></p>
+      <table class="t" style="margin-top:8px;font-size:20px">
+        <thead><tr><th></th><th class="n">PIB</th><th class="n">Export.</th><th class="n">Resto</th></tr></thead>
+        <tbody>
+          <tr class="frag" data-step="1"><td>1974–89</td><td class="n">2,9</td><td class="n">10,7</td><td class="n"><b>1,9</b></td></tr>
+          <tr class="frag hi" data-step="2"><td>1990–98</td><td class="n">7,1</td><td class="n">9,9</td><td class="n"><b>6,3</b></td></tr>
+        </tbody>
+      </table>
+      <p class="frag" data-step="3" style="margin-top:14px;font-size:19px">Lo que cambió fue el resto del PIB, donde está la gran mayoría de empresas y trabajadores <span class="pag">(p. 267–268)</span></p>
+      <p class="frag" data-step="3" style="margin-top:8px;font-size:19px">Las exportaciones dependen de la macro mundial; el resto, de la macro nacional <span class="pag">(p. 55)</span></p>
+    </div>
+    <div>
+      <p class="frag" data-step="4"><b>Qué cambió en 1990–95 <span class="pag">(p. 311, 348)</span></b></p>
+      <ol class="list" style="font-size:18px;margin-top:8px;gap:7px">
+        <li class="frag" data-step="4">Reconstrucción de instituciones democráticas</li>
+        <li class="frag" data-step="4">Reforma tributaria de 1990, superávit fiscal y coordinación BC–Hacienda <span class="pag">(p. 57, 309)</span></li>
+        <li class="frag" data-step="5">Encaje a los flujos de corto plazo: 20% en 1991, 30% en 1992 <span class="pag">(p. 323–324)</span></li>
+        <li class="frag" data-step="5">Banda reptante con intervención: TCR se aprecia 4,1% en 1990–94, contra 23% en la región <span class="pag">(p. 276)</span></li>
+        <li class="frag" data-step="5">Miniajustes de demanda para evitar maxiajustes ⇒ micro alineada con macro <span class="pag">(p. 62, 344)</span></li>
+      </ol>
+      <p class="frag" data-step="6" style="margin-top:12px;font-size:18px">A partir de 1996: el TCR se aprecia 19%, el déficit externo llega a 4,8% del PIB y, tras la crisis asiática, el potencial baja de 7% a ~4% <span class="pag">(p. 69, 278)</span></p>
+    </div>
+  </div></div>
+</section>
+
+<!-- 11 Cambio estructural -->
+<section class="slide" data-steps="6" data-chart="struct">
+  <h2>Una sugerencia a incorporar: cambio estructural</h2>
+  <div class="body">
+    <p class="center" style="font-size:17px;color:var(--ink-2)">Participación en el empleo total, Chile 1950–2009 (%)</p>
+    <div class="two">
+      <div>
+        <div class="ctl"><b style="color:var(--ink-2);font-size:15px">Grandes sectores</b><button class="btn" data-replay="sec">↻ Reproducir</button></div>
+        <div class="chart" id="sec"></div>
+        <div class="legend"><span><i style="background:var(--s3)"></i>Servicios</span><span><i style="background:var(--s2)"></i>Agricultura</span><span><i style="background:var(--s1)"></i>Manufactura</span><span><i style="background:var(--s4)"></i>Minería, construcción y utilities</span></div>
+      </div>
+      <div>
+        <div class="ctl"><b style="color:var(--ink-2);font-size:15px">Subsectores de servicios</b><button class="btn" data-replay="sub">↻ Reproducir</button></div>
+        <div class="chart" id="sub"></div>
+        <div class="legend" style="display:grid;grid-template-columns:1fr 1fr;gap:6px 14px"><span><i style="background:var(--s3)"></i>Gobierno y servicios sociales y personales</span><span><i style="background:var(--s2)"></i>Comercio, restaurantes y hoteles</span><span><i style="background:var(--s1)"></i>Finanzas, seguros y servicios a empresas</span><span><i style="background:var(--s4)"></i>Transporte, almacenamiento y comunicaciones</span></div>
+      </div>
+    </div>
+    <p class="foot">GGDC 10-Sector Database (Timmer, de Vries y de Vries 2015), Chile 1950–2009 (se omite 2010 en adelante por el quiebre de clasificación de la nueva ENE). Los cuatro grandes sectores suman 100 cada año; los cuatro subsectores suman la participación de servicios. GGDC no separa gobierno de servicios comunales para Chile. Sombreados: dictadura 1973–89 y salto 1990–98</p>
+  </div>
+</section>
+
+<!-- 12 Qué dice -->
+<section class="slide" data-steps="3">
+  <h2>Cambio estructural y macro para el desarrollo</h2>
+  <div class="body"><ul class="list" style="gap:20px">
+    <li class="frag" data-step="1"><b>La desindustrialización coincide con los ciclos del TCR:</b> manufactura de 22% del empleo (1973) a 14% (1985) con apertura abrupta y atraso cambiario (caps. II–III); 17% en los noventa con TCR competitivo; 11% en 2009 tras la flotación de 1999 <span class="pag">(p. 267, 280, 550)</span></li>
+    <li class="frag" data-step="2"><b>Servicios absorbieron todo:</b> de 40% a 69% del empleo (1950–2009). El pico de 1983 (35% en servicios comunales y personales) son los empleos de emergencia PEM y POJH <span class="pag">(p. 29, 231)</span>. ¿Servicios modernos o refugio de baja productividad? Es la heterogeneidad estructural <span class="pag">(p. 530)</span>; McMillan y Rodrik (2011). Relacionado con la enfermedad de costos de Baumol</li>
+    <li class="frag" data-step="3"><b>Agricultura:</b> pasa de 30% a 9% (1950–2009): en los noventa, con agroexportación y TCR estable, un cambio estructural estándar</li>
+  </ul></div>
+</section>
+
+<!-- 13 Propuesta -->
+<section class="slide" data-steps="2">
+  <h2>La propuesta para el libro</h2>
+  <div class="body">
+    <div class="banner frag" data-step="1">El capítulo XIV pide “cambios profundos en las estructuras productivas” <span class="pag">(p. 538)</span> y una transformación productiva incluyente <span class="pag">(p. 548)</span>. Una sección que vincule los ciclos del TCR y de la brecha recesiva con la velocidad y la dirección del cambio estructural cerraría el argumento:
+      <span class="big">la macroeconomía para el desarrollo no solo determina el nivel del PIB potencial, sino su composición sectorial</span></div>
+    <ul class="list" style="margin-top:10px">
+      <li class="frag" data-step="2">Puede ser un puente entre la macro para el desarrollo y las políticas de desarrollo productivo del capítulo XIV <span class="pag">(p. 548)</span></li>
+    </ul>
+  </div>
+</section>
+
+<!-- 14 Discusión -->
+<section class="slide" data-steps="4">
+  <h2>Para la discusión</h2>
+  <div class="body"><ol class="list" style="gap:18px">
+    <li class="frag" data-step="1"><b>Medición:</b> el PIB potencial en tiempo real. El libro critica el PIB tendencial oficial por suponer simetría entre auges y recesiones <span class="pag">(p. 78)</span>; la distinción recuperación/expansión depende de esa medición</li>
+    <li class="frag" data-step="2"><b>Atribución:</b> 1990–98 combina macro para el desarrollo, reformas tributaria y laboral, y recuperación de la democracia <span class="pag">(p. 309, 347)</span>. ¿Cuánto pesa cada una?</li>
+    <li class="frag" data-step="3"><b>Transiciones de política:</b> mucho foco en la caída del crecimiento en los 2010, deberíamos poner más en la caída de la segunda mitad de los noventa</li>
+    <li class="frag" data-step="4"><b>En tiempos de IA:</b> la experiencia, el pensar holístico, sintetizar procesos y el juicio son lo que agrega valor en un profesor universitario</li>
+  </ol></div>
+</section>
+
+<div class="hint" id="hint">→ / espacio: avanzar · ←: volver · R: repetir gráfico · F: pantalla completa</div>
+<div class="num" id="num"></div>
+<div class="progress" id="progress"></div>
+</div></div>
+<div class="nav"><button class="navbtn" id="prev" aria-label="Anterior">←</button><button class="navbtn" id="next" aria-label="Siguiente">→</button></div>
+
+<script>
+(function(){
+'use strict';
+// ---------------- Datos ----------------
+const D = {
+  // Índice PIB per cápita 1981=100. 1981-89: cuadro IV.2 (p.205). 1990-97: extensión (ver nota al pie)
+  gapYears:[1981,1982,1983,1984,1985,1986,1987,1988,1989,1990,1991,1992,1993,1994,1995,1996,1997],
+  pot:[99.0,102.3,103.0,101.5,103.0,103.9,103.9,105.6,107.4,113.7,120.3,127.4,135.0,143.1,151.7,159.6,168.1],
+  eff:[100.0,84.6,82.6,86.5,87.1,90.5,94.1,99.3,107.4,110.0,117.1,129.1,136.3,141.8,153.4,161.3,170.1],
+  // De Gregorio (2004), DTBC N°298, cuadro 4: contribución de K, L, PTF
+  growth:[{p:'1985–89',k:1.19,l:3.24,t:1.82,tot:'~6,4%',sub:'recuperación'},{p:'1990–94',k:2.70,l:1.75,t:2.67,tot:'~7,3%',sub:'expansión'}],
+  // GGDC 10-sector, Chile, % del empleo total. oth = minería + utilities + construcción; ser = wrt+tra+fire+gov+oth(comunales). Suman 100.
+  // 2013-2025: ENE vía ILOSTAT (CIIU4), sobre empleo clasificado (excluye X, <0,4%); 2012 repetido de GGDC para continuidad
+  yrs:range(1950,2009),
+  agr:[31.3,31.7,33.7,31.3,27.8,29.5,27.4,26.8,30.1,28.5,30.2,30.1,29.6,29.2,29.1,28.7,28.2,27.8,27.4,26.8,26.5,25.3,24.2,23.7,23.8,24.5,23.8,22.4,21.9,21.1,21.2,19.5,19.5,18.9,18.5,22.2,21.8,21.3,20.6,19.0,18.1,17.4,16.2,14.8,14.0,12.9,12.5,11.2,10.8,10.6,10.1,11.6,11.1,11.2,11.0,10.7,10.5,10.1,9.6,9.4],
+  man:[19.2,17.3,15.7,15.6,24.6,22.6,23.6,21.7,19.4,21.2,18.3,18.1,17.9,17.6,19.0,20.5,20.2,20.4,20.5,20.4,20.1,20.6,21.1,22.1,22.1,20.7,20.5,20.6,19.8,19.7,17.3,16.7,14.8,13.7,14.4,13.8,14.8,16.0,16.7,17.6,17.5,17.4,17.4,17.2,16.7,16.3,15.9,15.7,14.9,13.5,13.1,12.5,12.4,12.4,12.2,11.5,11.5,11.4,11.1,11.0],
+  ser:[39.1,39.6,40.2,43.0,38.6,39.0,40.1,43.8,43.3,40.3,41.0,41.9,42.4,43.3,41.7,40.4,40.9,41.5,42.7,43.7,43.8,44.6,46.0,45.2,42.0,43.8,45.1,46.9,47.7,48.1,50.6,51.0,55.5,58.8,57.6,54.3,54.0,52.7,51.7,51.9,53.5,54.4,55.8,56.6,58.4,59.7,60.2,61.0,62.1,65.5,66.5,65.4,65.8,66.0,66.3,67.2,66.8,67.2,67.5,68.5],
+  oth:[10.5,11.5,10.4,10.0,9.0,8.9,8.8,7.7,7.2,10.0,10.4,9.9,10.1,10.0,10.3,10.4,10.7,10.3,9.5,9.1,9.5,9.5,8.6,9.0,12.0,11.0,10.7,10.0,10.6,11.1,10.9,12.8,10.1,8.6,9.5,9.7,9.4,10.1,11.0,11.5,10.9,10.8,10.6,11.4,11.0,11.1,11.4,12.1,12.3,10.3,10.3,10.5,10.7,10.4,10.5,10.6,11.2,11.3,11.7,11.1],
+  yrs2:range(2012,2025),
+  agr2:[8.3,8.5,8.3,8.2,8.3,8.1,8.0,7.8,7.2,6.5,6.3,6.2,6.2,6.1],
+  ser2:[68.9,67.4,68.0,68.0,68.7,69.2,69.7,70.1,70.9,70.4,70.8,71.7,72.1,72.1],
+  man2:[9.8,11.3,11.2,11.2,10.6,10.7,10.3,9.8,10.1,10.0,9.9,9.8,9.5,9.6],
+  oth2:[13.0,12.8,12.5,12.7,12.4,11.9,12.0,12.3,11.8,13.0,12.9,12.3,12.2,12.2],
+  wrt:[10.4,10.1,10.9,11.4,9.6,9.5,10.6,11.2,10.0,10.3,10.2,10.5,11.7,11.4,10.9,10.5,10.8,10.6,10.9,11.4,11.0,10.6,11.1,10.8,11.0,11.1,11.3,11.8,12.0,11.9,14.6,14.7,15.4,14.4,15.2,14.1,14.8,15.5,15.8,16.4,17.1,17.6,18.6,19.4,20.0,20.0,19.7,20.1,20.6,21.7,21.6,21.4,22.1,21.7,21.5,21.8,22.0,22.3,22.4,22.6],
+  tra:[4.3,4.6,4.9,5.3,5.3,4.8,5.0,5.5,5.6,5.1,5.1,5.3,5.2,5.3,5.1,4.9,5.1,5.4,5.7,6.0,6.0,6.4,6.4,6.8,6.7,7.0,6.7,6.7,6.2,6.3,6.2,6.2,6.3,6.1,6.0,5.5,6.0,6.1,6.4,6.7,6.8,6.6,6.7,6.8,7.0,7.2,7.0,7.2,7.4,7.2,7.4,7.1,7.4,7.6,7.2,7.2,7.3,7.3,7.5,7.2],
+  fire:[2.3,2.5,2.3,2.4,2.1,1.9,2.3,2.4,2.6,2.5,2.5,2.3,2.2,2.5,2.3,2.3,2.4,2.5,2.5,2.6,2.7,2.7,2.5,2.4,2.5,2.4,2.4,2.4,2.5,2.7,3.2,3.3,3.2,3.4,3.6,3.7,3.9,4.2,4.4,4.6,4.9,5.5,5.7,6.4,7.4,8.0,8.7,9.0,9.6,10.3,10.7,10.8,11.1,11.4,11.9,12.3,12.2,12.5,12.9,13.4],
+  gov:[22.1,22.4,22.2,23.9,21.7,22.9,22.2,24.7,25.1,22.3,23.2,23.9,23.3,24.1,23.3,22.6,22.7,23.1,23.6,23.7,24.1,24.9,26.0,25.2,21.9,23.3,24.6,26.1,27.0,27.2,26.5,26.7,30.7,34.9,32.8,31.0,29.4,26.9,25.1,24.3,24.8,24.6,24.8,23.9,24.0,24.5,24.9,24.7,24.6,26.4,26.9,26.1,25.3,25.3,25.7,25.9,25.3,25.1,24.7,25.3],
+  yrs3:range(2012,2025),
+  wrt2:[26.3,23.4,23.1,23.4,24.0,23.9,23.8,24.1,22.6,23.2,23.5,23.7,23.8,23.5],
+  tra2:[6.4,8.4,8.3,8.3,8.3,8.5,8.7,8.1,8.2,8.6,8.5,8.4,8.5,8.7],
+  fire2:[11.3,8.5,8.9,8.4,8.9,8.7,8.8,8.8,10.2,9.8,10.0,10.0,9.9,10.4],
+  gov2:[24.9,27.1,27.7,27.9,27.4,28.2,28.3,29.1,29.9,28.9,28.8,29.6,30.0,29.6]
+};
+function range(a,b){const r=[];for(let y=a;y<=b;y++)r.push(y);return r;}
+const reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
+const css = (v)=>getComputedStyle(document.documentElement).getPropertyValue(v).trim();
+const NS='http://www.w3.org/2000/svg';
+function el(tag,attrs,parent){const e=document.createElementNS(NS,tag);for(const k in attrs)e.setAttribute(k,attrs[k]);if(parent)parent.appendChild(e);return e;}
+function fmt(v){return v.toFixed(1).replace('.',',');}
+function tween(ms,fn,done){ if(reduced){fn(1);done&&done();return {stop(){}};}
+  let raf,t0=null,stopped=false;
+  function step(t){ if(stopped)return; if(t0===null)t0=t; const u=Math.min(1,(t-t0)/ms); fn(u); if(u<1)raf=requestAnimationFrame(step); else done&&done(); }
+  raf=requestAnimationFrame(step); return {stop(){stopped=true;cancelAnimationFrame(raf);}}; }
+
+// ---------------- Gráfico genérico de líneas por año ----------------
+function lineChart(host,opts){
+  const W=opts.w||620,H=opts.h||360,m={l:44,r:opts.right||20,t:22,b:34};
+  const svg=el('svg',{viewBox:`0 0 ${W} ${H}`,role:'img','aria-label':opts.label||''},host);
+  const x=y=>m.l+(y-opts.x0)/(opts.x1-opts.x0)*(W-m.l-m.r);
+  const y=v=>H-m.b-(v-opts.y0)/(opts.y1-opts.y0)*(H-m.t-m.b);
+  const g=el('g',{},svg);
+  (opts.shades||[]).forEach(s=>el('rect',{x:x(s[0]),y:m.t,width:x(s[1])-x(s[0]),height:H-m.t-m.b,fill:s[2]},g));
+  opts.yt.forEach(v=>{el('line',{x1:m.l,x2:W-m.r,y1:y(v),y2:y(v),class:'gr'},g);el('text',{x:m.l-8,y:y(v)+4,'text-anchor':'end',class:'tk'},g).textContent=v;});
+  el('line',{x1:m.l,x2:W-m.r,y1:y(opts.y0),y2:y(opts.y0),class:'ax'},g);
+  opts.xt.forEach(v=>el('text',{x:x(v),y:H-m.b+18,'text-anchor':'middle',class:'tk'},g).textContent=v);
+  const paths=opts.series.map(s=>el('path',{fill:'none',stroke:s.color,'stroke-width':2.2,'stroke-linejoin':'round','stroke-linecap':'round','stroke-dasharray':s.dash?'5 4':'none'},g));
+  const yr=el('text',{x:W-m.r,y:m.t+8,'text-anchor':'end',class:'yr'},g); yr.textContent='';
+  const extra=el('g',{},g);
+  const tip=document.createElement('div');tip.className='tip';host.appendChild(tip);
+  function d(s,upto){ let p='',started=false;
+    for(let i=0;i<s.years.length;i++){ const yy=s.years[i]; if(yy>upto+1e-9){ // interpolate partial
+        if(i>0&&upto>s.years[i-1]){const f=(upto-s.years[i-1])/(yy-s.years[i-1]);const v=s.vals[i-1]+(s.vals[i]-s.vals[i-1])*f;p+=` L${x(upto).toFixed(1)} ${y(v).toFixed(1)}`;}
+        break;}
+      p+=(started?' L':'M')+x(yy).toFixed(1)+' '+y(s.vals[i]).toFixed(1);started=true;}
+    return p; }
+  const all=opts.series.map((_,i)=>i);
+  const state={upto:opts.series.map(()=>opts.x0),anim:null};
+  function draw(showYear,cursor){ opts.series.forEach((s,i)=>paths[i].setAttribute('d',d(s,state.upto[i]))); yr.textContent=showYear?Math.floor(cursor):''; }
+  // hover
+  host.addEventListener('mousemove',ev=>{ const r=svg.getBoundingClientRect(); const px=(ev.clientX-r.left)/r.width*W; if(px<m.l||px>W-m.r){tip.style.display='none';return;}
+    const yy=Math.round(opts.x0+(px-m.l)/(W-m.l-m.r)*(opts.x1-opts.x0)); const rows=[];
+    opts.series.forEach((s,k)=>{const i=s.years.indexOf(yy); if(i>=0&&yy<=state.upto[k])rows.push(`<span style="color:${s.color}">■</span> ${s.name}: <b>${fmt(s.vals[i])}</b>`);});
+    if(!rows.length){tip.style.display='none';return;}
+    tip.innerHTML=`<b>${yy}</b><br>`+rows.join('<br>'); tip.style.display='block'; const hr=host.getBoundingClientRect(); tip.style.left=Math.min(ev.clientX-hr.left+12,hr.width-tip.offsetWidth-4)+'px'; tip.style.top=(ev.clientY-hr.top-10)+'px'; });
+  host.addEventListener('mouseleave',()=>tip.style.display='none');
+  return {svg,x,y,extra,W,H,m,state,
+    // anima las series `idx` (todas por defecto) desde `from` hasta `to`
+    play(from,to,ms,idx,done){ idx=idx||all; if(state.anim)state.anim.stop(); state.anim=tween(ms,u=>{const c=from+(to-from)*u; idx.forEach(i=>state.upto[i]=c); draw(true,c);},()=>{yr.textContent='';done&&done();}); },
+    snap(to,idx){ idx=idx||all; if(state.anim)state.anim.stop(); idx.forEach(i=>state.upto[i]=to); draw(false); }};
+}
+function dataTable(host,years,cols,pick){ const t=document.createElement('table'); let h='<tr><th>Año</th>'+cols.map(c=>`<th>${c.name}</th>`).join('')+'</tr>';
+  years.filter(pick).forEach(yy=>{h+=`<tr><td>${yy}</td>`+cols.map(c=>{const i=c.years.indexOf(yy);return `<td>${i>=0?fmt(c.vals[i]):'–'}</td>`;}).join('')+'</tr>';}); t.innerHTML=h; host.appendChild(t); }
+
+// ---------------- Gráficos concretos ----------------
+const charts={};
+// Línea de tiempo (lámina 4)
+charts.timeline=(function(){ const host=document.getElementById('timeline'); const W=1100,H=96; const svg=el('svg',{viewBox:`0 0 ${W} ${H}`},host);
+  const x=yr=>40+(yr-1973)/(2024-1973)*(W-80); const segs=[[1973,1990,'1973–89','2,9%','--rojo'],[1990,1999,'1990–98','7,1%','--verde'],[1999,2014,'1999–2013','4,2%','--s1'],[2014,2024,'2014–24','1,9%','--sn']];
+  el('line',{x1:x(1973),x2:x(2024),y1:70,y2:70,stroke:css('--line'),'stroke-width':3},svg);
+  [1973,1990,1999,2014,2024].forEach(yy=>{el('line',{x1:x(yy),x2:x(yy),y1:64,y2:76,stroke:css('--ink-3'),'stroke-width':1.5},svg);el('text',{x:x(yy),y:92,'text-anchor':'middle',class:'tk'},svg).textContent=yy;});
+  const groups=segs.map(s=>{const g=el('g',{opacity:0},svg); const c=css(s[4]);
+    el('line',{x1:x(s[0]),x2:x(s[1]),y1:70,y2:70,stroke:c,'stroke-width':6,'stroke-linecap':'round'},g);
+    el('text',{x:(x(s[0])+x(s[1]))/2,y:26,'text-anchor':'middle',class:'lb b',fill:c},g).textContent=s[2];
+    const t=el('text',{x:(x(s[0])+x(s[1]))/2,y:52,'text-anchor':'middle',style:`fill:${c};font-size:24px;font-weight:600;font-family:Lora,serif`},g);t.textContent=s[3]; return g;});
+  return {goto(step,anim){ groups.forEach((g,i)=>{const on=step>=i+3; if(anim&&on&&g.getAttribute('opacity')==='0'&&!reduced){tween(400,u=>g.setAttribute('opacity',u));} else g.setAttribute('opacity',on?1:0);}); }};
+})();
+
+// Brecha (lámina 9)
+charts.gap=(function(){ const host=document.getElementById('gap');
+  const pot={name:'PIB potencial',years:D.gapYears,vals:D.pot,color:css('--sn'),dash:true}, eff={name:'PIB efectivo',years:D.gapYears,vals:D.eff,color:css('--s8')};
+  const c=lineChart(host,{w:620,h:380,x0:1981,x1:1997.4,y0:75,y1:175,yt:[80,100,120,140,160],xt:[1981,1985,1989,1993,1997],series:[pot,eff],label:'PIB efectivo y potencial per cápita, 1981 a 1997'});
+  const ann=c.extra; const lbl=(t,xx,yy,color,anchor)=>{const e=el('text',{x:xx,y:yy,class:'lb b',fill:color,'text-anchor':anchor||'start'},ann);e.textContent=t;return e;};
+  const lPot=lbl('- - - PIB potencial',c.x(1981.3),c.y(118),css('--ink-3')); const lEff=lbl('PIB efectivo',c.x(1984.3),c.y(80),css('--s8'));
+  const arrow=el('g',{opacity:0},ann); el('line',{x1:c.x(1983),x2:c.x(1983),y1:c.y(84),y2:c.y(101.5),stroke:css('--s1'),'stroke-width':2},arrow);
+  [84,101.5].forEach(v=>el('line',{x1:c.x(1983)-5,x2:c.x(1983)+5,y1:c.y(v),y2:c.y(v),stroke:css('--s1'),'stroke-width':2},arrow));
+  const bt=el('text',{x:c.x(1983.3),y:c.y(93),class:'lb b',fill:css('--s1')},arrow);bt.textContent='brecha recesiva';
+  const exp=el('text',{x:c.x(1994),y:c.y(104),class:'lb b',fill:css('--s3'),'text-anchor':'middle',opacity:0},ann);exp.textContent='1990–97: efectivo ≈ potencial';
+  dataTable(document.getElementById('gap-table'),D.gapYears,[pot,eff],()=>true);
+  let phase=0; const P=[0],E=[1];
+  function show(step,anim){ // 1 efectivo 81-89; 2 efectivo hasta 97; 3 potencial 81-89 + brecha; 4 potencial 90-97, brecha cerrada
+    lEff.setAttribute('opacity',step>=1?1:0); lPot.setAttribute('opacity',step>=3?1:0);
+    arrow.setAttribute('opacity',step>=3?1:0); exp.setAttribute('opacity',step>=4?1:0);
+    if(step<1){c.snap(1981);return;}
+    if(step===1){ c.snap(1981,P); anim?c.play(1981,1989,1800,E):c.snap(1989,E); }
+    if(step===2){ c.snap(1981,P); c.snap(1989,E); anim?c.play(1989,1997,1800,E):c.snap(1997,E); }
+    if(step===3){ c.snap(1997,E); anim?c.play(1981,1989,1600,P):c.snap(1989,P); }
+    if(step>=4){ c.snap(1997,E); c.snap(1989,P); anim?c.play(1989,1997,1600,P):c.snap(1997,P); }
+  }
+  return {goto(step,anim){phase=step;show(step,anim);}, replay(){ show(Math.max(1,phase),true); }, chart:c};
+})();
+
+// Contabilidad del crecimiento (lámina 10)
+charts.growth=(function(){ const host=document.getElementById('growth'); const W=1100,H=262,m={l:170,r:110,t:16,b:46};
+  const svg=el('svg',{viewBox:`0 0 ${W} ${H}`,role:'img','aria-label':'Contribución de capital, trabajo y PTF al crecimiento por período, barras horizontales'},host);
+  const xmax=8; const x=v=>m.l+v/xmax*(W-m.l-m.r); const bh=64; const ys=[m.t+10,m.t+10+bh+28];
+  [0,2,4,6,8].forEach(v=>{el('line',{x1:x(v),x2:x(v),y1:m.t,y2:H-m.b,class:'gr'},svg);el('text',{x:x(v),y:H-m.b+18,'text-anchor':'middle',class:'tk'},svg).textContent=v;});
+  el('line',{x1:x(0),x2:x(0),y1:m.t,y2:H-m.b,class:'ax'},svg);
+  el('text',{x:W-m.r,y:H-m.b+34,'text-anchor':'end',class:'tk'},svg).textContent='puntos porcentuales por año';
+  const cols=[css('--s2'),css('--s1'),css('--s3')];
+  const bars=D.growth.map((g,i)=>{ const y0=ys[i]; const t=el('text',{x:m.l-14,y:y0+bh/2-4,'text-anchor':'end',class:'lb b'},svg);t.textContent=g.p;
+    if(g.sub){const s=el('text',{x:m.l-14,y:y0+bh/2+16,'text-anchor':'end',class:'tk'},svg);s.textContent=g.sub;}
+    const segs=[g.l,g.k,g.t].map((v,j)=>{const r=el('rect',{x:x(0),y:y0,height:bh,width:0,fill:cols[j],rx:j===2?4:0},svg);const lab=el('text',{x:0,y:y0+bh/2+6,'text-anchor':'middle',style:'fill:#fff;font-size:16px;font-weight:600',opacity:0},svg);lab.textContent=fmt(v);return {r,lab,v};});
+    const tot=el('text',{x:x(g.k+g.l+g.t)+12,y:y0+bh/2+9,style:`font-size:26px;font-weight:600;font-family:Lora,serif;fill:${i===0?css('--rojo'):css('--verde')}`,opacity:0},svg);tot.textContent=g.tot;
+    return {segs,tot}; });
+  function setBar(i,u){ const b=bars[i]; let base=0; b.segs.forEach((s,j)=>{ const w=s.v*u; s.r.setAttribute('x',x(base)); s.r.setAttribute('width',Math.max(0,x(base+w)-x(base)-(j<2?2:0))); s.lab.setAttribute('x',(x(base)+x(base+w))/2); s.lab.setAttribute('opacity',(u>0.98&&s.v>=0.9)?1:0); base+=w; }); b.tot.setAttribute('opacity',u>0.98?1:0); }
+  const seq=[];
+  let cur=0;
+  function goto(step,anim){ cur=step; seq.forEach(a=>a.stop()); seq.length=0; D.growth.forEach((g,i)=>{ const on=step>=i+1; if(on&&anim&&step===i+1&&!reduced){ setBar(i,0); seq.push(tween(900,u=>setBar(i,u))); } else setBar(i,on?1:0); }); }
+  return {goto, replay(){ const s=Math.max(1,Math.min(cur,2)); D.growth.forEach((g,i)=>setBar(i,i+1<s?1:0)); seq.forEach(a=>a.stop()); seq.length=0; seq.push(tween(900,u=>setBar(s-1,u))); }};
+})();
+
+// Cambio estructural (lámina 12)
+charts.struct=(function(){
+  const sh=[[1973,1989,css('--shade-r')],[1990,1998,css('--shade-g')]];
+  const sec=lineChart(document.getElementById('sec'),{w:560,h:330,x0:1950,x1:2010,y0:0,y1:80,yt:[0,20,40,60,80],xt:[1950,1970,1990,2010],shades:sh,label:'Empleo por grandes sectores, 1950 a 2025',
+    series:[{name:'Servicios',years:D.yrs,vals:D.ser,color:css('--s3')},{name:'Agricultura',years:D.yrs,vals:D.agr,color:css('--s2')},{name:'Manufactura',years:D.yrs,vals:D.man,color:css('--s1')},{name:'Minería, construcción y utilities',years:D.yrs,vals:D.oth,color:css('--s4')}]});
+  const sub=lineChart(document.getElementById('sub'),{w:560,h:330,x0:1950,x1:2010,y0:0,y1:40,yt:[0,10,20,30,40],xt:[1950,1970,1990,2010],shades:sh,label:'Empleo por subsectores de servicios, 1950 a 2025',
+    series:[{name:'Gobierno y serv. sociales y personales',years:D.yrs,vals:D.gov,color:css('--s3')},{name:'Comercio, restaurantes y hoteles',years:D.yrs,vals:D.wrt,color:css('--s2')},{name:'Finanzas, seguros y serv. a empresas',years:D.yrs,vals:D.fire,color:css('--s1')},{name:'Transporte, almacenamiento y comunicaciones',years:D.yrs,vals:D.tra,color:css('--s4')}]});
+  const pick=yy=>yy%10===0||yy===2009;
+  let cur=0;
+  const PH=[[1950,1973],[1973,1990],[1990,2009]]; // antes de la dictadura, dictadura, el resto
+  function run(ch,k,anim){ const [f,t]=PH[k]; anim?ch.play(f,t,k===2?2200:1600):ch.snap(t); }
+  function goto(step,anim){ cur=step; // 1-3: grandes sectores por fase; 4-6: subsectores por fase
+    if(step<1){sec.snap(1950);sub.snap(1950);return;}
+    if(step<=3){ sub.snap(1950); sec.snap(PH[step-1][0]); run(sec,step-1,anim); }
+    else { sec.snap(2009); const k=Math.min(step,6)-4; sub.snap(PH[k][0]); run(sub,k,anim); }
+  }
+  return {goto, replaySec(){ sec.play(1950,2009,4200); }, replaySub(){ sub.play(1950,2009,4200); }};
+})();
+
+// ---------------- Motor de la presentación ----------------
+const stage=document.getElementById('stage'), slides=[...document.querySelectorAll('.slide')];
+const num=document.getElementById('num'), prog=document.getElementById('progress');
+let cur=0, step=0; const total=slides.length;
+const mobile=()=>innerWidth<=700;
+function fit(){ if(mobile()){stage.style.transform='';return;} const s=Math.min((innerWidth-32)/1280,(innerHeight-24)/720); stage.style.transform=`scale(${s})`; }
+addEventListener('resize',fit); fit();
+function chartOf(i){ const k=slides[i].dataset.chart; return k?charts[k]:null; }
+function render(anim){ slides.forEach((s,i)=>s.classList.toggle('active',i===cur));
+  const s=slides[cur]; s.querySelectorAll('.frag').forEach(f=>f.classList.toggle('on',+f.dataset.step<=step));
+  const c=chartOf(cur); if(c)c.goto(step,anim);
+  num.textContent=`${cur+1} / ${total}`; prog.style.width=((cur+1)/total*100)+'%';
+  try{localStorage.setItem('ffd-pos',cur+':'+step);}catch(e){} }
+function maxStep(i){return +slides[i].dataset.steps||0;}
+function next(){ if(step<maxStep(cur)){step++;render(true);} else if(cur<total-1){cur++;step=0;render(true);} }
+function prev(){ if(step>0){step--;render(false);} else if(cur>0){cur--;step=maxStep(cur);render(false);} }
+function replay(){ const c=chartOf(cur); if(!c)return; if(c.replay)c.replay(); else if(c.replaySec){c.replaySec();c.replaySub();} }
+document.addEventListener('keydown',e=>{ if(e.target.tagName==='BUTTON'||e.target.tagName==='SUMMARY'){} if(['ArrowRight',' ','PageDown','Enter'].includes(e.key)){e.preventDefault();next();} else if(['ArrowLeft','PageUp','Backspace'].includes(e.key)){e.preventDefault();prev();} else if(e.key==='Home'){cur=0;step=0;render(false);} else if(e.key==='End'){cur=total-1;step=maxStep(cur);render(false);} else if(e.key==='r'||e.key==='R'){replay();} else if(e.key==='f'||e.key==='F'){ const el=document.documentElement; if(document.fullscreenElement){document.exitFullscreen&&document.exitFullscreen();} else if(el.requestFullscreen){el.requestFullscreen().catch(()=>{});} } });
+document.getElementById('next').addEventListener('click',next); document.getElementById('prev').addEventListener('click',prev);
+stage.addEventListener('click',e=>{ if(mobile())return; if(e.target.closest('button,details,summary,a,.chart'))return; const r=stage.getBoundingClientRect(); (e.clientX-r.left)/r.width<0.25?prev():next(); });
+document.querySelectorAll('[data-replay]').forEach(b=>b.addEventListener('click',e=>{e.stopPropagation(); const k=b.dataset.replay; if(k==='gap')charts.gap.replay(); else if(k==='growth')charts.growth.replay(); else if(k==='sec')charts.struct.replaySec(); else if(k==='sub')charts.struct.replaySub();}));
+// modo móvil: todo visible y gráficos completos
+function mobileMode(){ if(!mobile())return; stage.classList.add('static'); slides.forEach(s=>s.classList.add('active')); Object.keys(charts).forEach(k=>charts[k].goto(99,false)); }
+if(mobile()){mobileMode();} else { let saved=null; try{saved=localStorage.getItem('ffd-pos');}catch(e){} if(saved){const [a,b]=saved.split(':').map(Number); if(a>=0&&a<total){cur=a;step=Math.min(b,maxStep(a));}} render(false); }
+addEventListener('resize',()=>{ if(mobile()&&!stage.classList.contains('static'))mobileMode(); });
+})();
+</script>

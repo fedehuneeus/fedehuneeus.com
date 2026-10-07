@@ -1,0 +1,150 @@
+# ---------------------------------------------------------------
+# RESEARCH section.  Three lists: working_papers, work_in_progress,
+# publications.  To add a paper, copy one entry and edit it.
+#
+# Fields (all optional except title):
+#   title      – paper title (shown in capitals automatically)
+#   pdf        – link for the title (usually /s/research/FILE.pdf)
+#   authors    – list of {name, url}; url optional
+#   links      – list of {label, url} shown after the authors (Appendix, Slides…)
+#   status     – e.g. "Revision requested at the <em>American Economic Review</em>"
+#   journal    – for publications, e.g. "The Review of Economic Studies (2024)"
+#   extra      – list of extra lines (HTML allowed), each shown as its own line
+#   awards     – list of lines shown in italics
+#   abstract   – optional; if present a small "Abstract" toggle appears
+# ---------------------------------------------------------------
+
+working_papers:
+  - title: Production Network Formation, Trade, and Welfare
+    pdf: /s/research/AHM.pdf
+    authors:
+      - { name: Costas Arkolakis, url: "https://arkolakis.com/" }
+      - { name: Yuhei Miyauchi,   url: "https://sites.google.com/view/yuhei-miyauchi/home" }
+    links:
+      - { label: Appendix, url: /s/research/AHM_appendix.pdf }
+      - { label: Slides,   url: /s/research/AHM_slides.pdf }
+    status: "Revision requested at the <em>American Economic Review</em>"
+
+  - title: The Effects of Firms' Lobbying on Resource Misallocation
+    pdf: /s/research/misallocation.pdf
+    authors:
+      - { name: In Song Kim, url: "http://web.mit.edu/insong/www/" }
+    links:
+      - { label: Slides, url: /s/research/HK_uandes2022.pdf }
+    status: "Reject and resubmit at the <em>American Economic Review</em>"
+
+  - title: Earnings Inequality in Production Networks
+    pdf: /s/research/HKL.pdf
+    authors:
+      - { name: Kory Kroft, url: "http://korykroft.com/" }
+      - { name: Kevin Lim,  url: "https://sites.google.com/site/limkvn/" }
+    links:
+      - { label: Slides, url: /s/research/HKL_slides_May2023.pdf }
+    status: "Revised and resubmitted at <em>The Review of Economics and Statistics</em>"
+
+  - title: Crisis Credit, Employment Protection, Indebtedness and Risk
+    pdf: /s/research/HKLSV.pdf
+    authors:
+      - { name: Joe Kaboski,      url: "https://www3.nd.edu/~jkaboski/" }
+      - { name: Mauricio Larrain, url: "https://sites.google.com/site/mauriciolarrainerrazuriz/" }
+      - { name: Sergio Schmukler, url: "https://sites.google.com/site/sschmukler/home" }
+      - { name: Mario Vera,       url: "https://www.linkedin.com/in/mario-vera-delgado-b771b927/" }
+    status: "Revised and resubmitted to the <em>AEJ: Macro</em>"
+    extra:
+      - 'Old version material: <a href="https://www.nber.org/papers/w29774">NBER Working Paper 29774</a> | <a href="https://www.bcentral.cl/en/content/-/details/working-papers-n-942">Central Bank Working Paper 942</a> | <a href="http://documents.worldbank.org/curated/en/874031644864101145/The-Distribution-of-Crisis-Credit-Effects-on-Firm-Indebtedness-and-Aggregate-Risk">World Bank Working Paper 9937</a> | <a href="/s/research/HKLSV_slides_handout_220107.pdf">15-minutes Slides</a> | <a href="/s/research/HKLSV_slides_handout_220505.pdf">1-hour Slides</a>'
+
+  - title: Labor Hoarding Policies Can Trigger Creative Destruction
+    pdf: /s/research/AFGH.pdf
+    authors:
+      - { name: Elias Albagli,     url: "https://www.bcentral.cl/el-banco/gobierno-corporativo/personas/elias-albagli" }
+      - { name: Andres Fernandez,  url: "https://sites.google.com/site/andresfernandezmartin8" }
+      - { name: Juan Guerra-Salas, url: "https://www.juanguerrasalas.com/" }
+    status: Submitted
+
+  - title: The Anatomy of Aggregate Productivity
+    pdf: /s/research/HKM.pdf
+    authors:
+      - { name: Yasutaka Koike-Mori, url: "https://yasutakakoike-mori.com/" }
+      - { name: Antonio Martner,     url: "https://amartner.github.io/" }
+    status: Submitted
+
+  - title: The Geographic and Sectoral Impact of Productivity
+    pdf: /s/research/HdV.pdf
+    authors:
+      - { name: Miguel del Valle, url: "https://madelvallef.github.io/" }
+    links:
+      - { label: Disaggregated Economic Accounts of Chile, url: "https://dataterritorios.corfo.cl/disaggregated-economic-accounts/" }
+    status: Submitted
+
+  - title: Production Network Dynamics and the Propagation of Shocks
+    pdf: /s/research/JMP_FHL.pdf
+    awards:
+      - WTO Essay Award for Young Economists 2019
+      - Best Graduate Student Paper of the West Coast Trade Workshop 2019
+    extra:
+      - '<em>Media:</em> <a href="https://www.wto.org/english/news_e/news19_e/essay_12sep19_e.htm">WTO</a>, <a href="https://www.emol.com/noticias/Economia/2019/09/12/961136/OMC-premia-Federico-Huneeus-paper.html">El Mercurio (spanish)</a>'
+
+work_in_progress:
+  - title: The Incidence of Distortions
+    pdf: /s/research/ABDGH.pdf
+    authors:
+      - { name: David Atkin,        url: "https://www.mit.edu/~atkin/" }
+      - { name: Baptiste Bernadac,  url: "https://economics.ucla.edu/graduate/graduate-profiles/" }
+      - { name: Dave Donaldson,     url: "https://dave-donaldson.com" }
+      - { name: Tishara Garg,       url: "https://economics.mit.edu/people/phd-students/tishara-garg" }
+    extra:
+      - 'Grant 1: <a href="https://steg.cepr.org/news/steg-newsletter-february-2023">Large Research Grant</a> | <a href="https://steg.cepr.org">STEG</a>'
+      - 'Grant 2: <a href="https://new.nsf.gov/funding">National Science Foundation Grant</a>'
+
+  - title: Information Frictions and Network Spillovers in Firm-to-Firm Linkages
+    authors:
+      - { name: Jie Bai,          url: "https://sites.google.com/site/jiebaiecon/home?authuser=0" }
+      - { name: Lauren Bergquist, url: "https://sites.google.com/site/laurenfbergquist/" }
+      - { name: Nicolas Jimenez,  url: "https://economics.yale.edu/people/nicolas-jimenez" }
+      - { name: Yuhei Miyauchi,   url: "https://sites.google.com/view/yuhei-miyauchi/home" }
+    extra:
+      - 'Grant: <a href="https://www.theigc.org/researchers/funding">Full Research Grant (x2)</a> | <a href="https://www.theigc.org/">International Growth Center</a>'
+
+  - title: Quantifying Aggregate Impacts in the Presence of Spillovers
+    authors:
+      - { name: Dave Donaldson, url: "https://economics.mit.edu/people/faculty/dave-donaldson" }
+      - { name: Vincent Rollet, url: "https://sites.google.com/site/vjrollet/home" }
+
+publications:
+  - title: Heterogeneous Paths of Industrialization
+    pdf: "https://academic.oup.com/restud/advance-article/doi/10.1093/restud/rdad066/7209759"
+    authors:
+      - { name: Richard Rogerson, url: "https://wws.princeton.edu/faculty-research/faculty/rdr" }
+    links:
+      - { label: Slides, url: /s/research/HR_slides.pdf }
+      - { label: 60-minutes Presentation, url: "https://www.youtube.com/watch?t=99s&v=YPPXTgjDB2k" }
+    journal: "The Review of Economic Studies (2024)"
+    extra:
+      - 'Replication Material: <a href="/s/research/ReplicationJuly2023.zip">Codes and Data</a>'
+      - 'Media: <a href="https://steg.cepr.org/podcasts/transforming-growth-episode-3">Non-Technical Summary Podcast</a> | <a href="https://twitter.com/FedericoHuneeus/status/1291751374431096832">Twitter Thread</a>'
+
+  - title: Ownership Networks and Labor Income
+    pdf: "https://academic.oup.com/jleo/advance-article-abstract/doi/10.1093/jleo/ewad027/7319196"
+    authors:
+      - { name: Borja Larrain,    url: "http://economiayadministracion.uc.cl/personal/blarrain/" }
+      - { name: Mauricio Larrain, url: "https://sites.google.com/site/mauriciolarrainerrazuriz/" }
+      - { name: Mounu Prem,       url: "https://sites.google.com/site/fcomunozma/" }
+    links:
+      - { label: Slides, url: /s/research/HLLP_BGLabor_slides_230831.pdf }
+    journal: "The Journal of Law, Economics, and Organization (2023)"
+
+  - title: The Internal Labor Markets of Business Groups
+    pdf: "https://doi.org/10.1016/j.jcorpfin.2021.102017"
+    authors:
+      - { name: Borja Larrain,    url: "http://economiayadministracion.uc.cl/personal/blarrain/" }
+      - { name: Mauricio Larrain, url: "https://sites.google.com/site/mauriciolarrainerrazuriz/" }
+      - { name: Mounu Prem,       url: "https://sites.google.com/site/fcomunozma/" }
+    journal: "Journal of Corporate Finance (2021)"
+
+  - title: Financing Firms in Hibernation during the COVID-19 Pandemic
+    pdf: "https://www.sciencedirect.com/science/article/pii/S1572308920301406"
+    authors:
+      - { name: Tatiana Didier,   url: "https://scholar.google.com/citations?hl=en&user=_jb3W_8AAAAJ" }
+      - { name: Mauricio Larrain, url: "https://sites.google.com/site/mauriciolarrainerrazuriz/" }
+      - { name: Sergio Schmukler, url: "https://sites.google.com/site/sschmukler/home" }
+    journal: "Journal of Financial Stability (2020)"

@@ -1,0 +1,22 @@
+{% assign p = site.data.profile %}
+<section id="about" class="index-section">
+  <div class="content">
+    <div class="about-grid">
+      <div class="about-text">
+        <p>{{ p.tagline }}</p>
+        {% for line in p.positions %}<p>{{ line }}</p>{% endfor %}
+        <p><em>Primary Field:</em> <strong>{{ p.primary_field }}</strong></p>
+        <p><em>Secondary Fields:</em> {{ p.secondary_fields }}</p>
+        <p><strong>Please find my</strong> <a href="{{ p.cv | relative_url }}">CV here</a></p>
+        <p><strong>Email:</strong> {{ p.email }}</p>
+        <p><strong>Office Phone Number:</strong> {{ p.phone }}</p>
+        <p><strong>Office Address:</strong> {{ p.address }}</p>
+        {% if p.also_at %}<p class="also-at">{{ p.also_at }}</p>{% endif %}
+      </div>
+      <div class="about-photo">
+        <img src="{{ p.portrait | relative_url }}" alt="{{ p.name }}" width="1500" height="1126" loading="lazy">
+        {% include social.html class="social-dark" %}
+      </div>
+    </div>
+  </div>
+</section>

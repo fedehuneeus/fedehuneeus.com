@@ -1,0 +1,72 @@
+# DISCUSSIONS — one entry per discussion, newest first.
+# Fields: title, pdf, venue, year, extra (optional list of {label,url})
+- title: Aggregate Productivity and Microdata
+  pdf: /s/discussions/Huneeus_GFP2026_Microdata_SettingTheScene.pdf
+  venue: OECD Global Forum on Productivity Annual Conference
+  year: 2026
+- title: "Reformas Económicas en Chile 1973-2024"
+  pdf: /s/discussions/laminas_ffrench_academico.pdf
+  venue: "de Ricardo Ffrench-Davis | Lanzamiento de la edición definitiva"
+  year: 2026
+  extra:
+    - { label: Versión interactiva, url: /s/discussions/laminas_ffrench_interactiva.html }
+- title: The Labor Market Consequences of a Rapid Climate Transition
+  pdf: /s/discussions/discussion_atlantafed_251113.pdf
+  venue: Atlanta Fed Macro Dynamics Conference
+  year: 2025
+- title: Long Run Employment Effects of Export Opportunities
+  pdf: /s/discussions/discussion_banff_250524.pdf
+  venue: Rocky Mountain Trade Conference
+  year: 2025
+- title: Aggregate Implications of Firm Heterogeneity
+  pdf: /s/discussions/discussion_dallasfed_241018.pdf
+  venue: Dallas Fed Conference on International Economics
+  year: 2024
+- title: Wholesalers in International Production Networks and Aggregate Productivity
+  pdf: /s/discussions/discussion_tign_230529.pdf
+  venue: IDB Trade, Integration and Growth Network (TIGN)
+  year: 2023
+- title: "Supply Chain Resilience: Evidence from Indian Firms"
+  pdf: /s/discussions/discussion_nber_bcch_230301.pdf
+  venue: NBER Conference on Supply Chains and Financial Frictions
+  year: 2023
+- title: Propagation and Amplification of Local Productivity Spillovers
+  pdf: /s/discussions/discussion_assa_230106.pdf
+  venue: ASSA Meetings
+  year: 2023
+- title: Healthier Firms for a Stronger Recovery
+  pdf: /s/discussions/discussion_ridge_221214.pdf
+  venue: RIDGE Forum joint with IDB and CGD
+  year: 2022
+- title: "Foreign Currency as a Barrier to International Trade: Evidence from Brazil"
+  pdf: /s/discussions/discussion_cemla_221110.pdf
+  venue: CEMLA Conference
+  year: 2022
+- title: Trade, Labor Market Concentration, and Wages
+  pdf: /s/discussions/discussion_newfaces_220501.pdf
+  venue: New Faces International Trade Conference
+  year: 2022
+- title: Jobless Industrialization
+  pdf: /s/discussions/discussion_assa_handout_220109.pdf
+  venue: ASSA Meetings
+  year: 2022
+- title: "Informal Labor Markets in Times of Pandemic: Evidence for Latin America"
+  pdf: /s/discussions/discussion_cemla_210708.pdf
+  venue: CEMLA Conference
+  year: 2021
+- title: Will Schumpeter Catch COVID-19?
+  pdf: /s/discussions/discussion_cebra_210707.pdf
+  venue: CEBRA Conference
+  year: 2021
+- title: "Ownership Concentration and Firm Value: New Evidence from Owner Stakes in IPOs"
+  pdf: /s/discussions/discussion_assa_210104.pdf
+  venue: ASSA Meetings
+  year: 2021
+- title: Financial Constraints and Propagation of Shocks in Production Networks
+  pdf: /s/discussions/discussionBerkeley_200214.pdf
+  venue: PIIE-Clausen Conference
+  year: 2020
+- title: "Self-Harming Trade Policy? Protectionism and Production Networks"
+  pdf: /s/discussions/discussion_cebra_200902.pdf
+  venue: CEBRA Conference
+  year: 2020

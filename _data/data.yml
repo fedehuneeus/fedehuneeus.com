@@ -1,0 +1,44 @@
+# DATA page.  intro, then groups of datasets.
+intro: "In a mission to foster the use of data for research. If a useful dataset is missing, please let me know."
+groups:
+  - heading: I. Firm Behavior
+    items:
+      - { name: World Management Survey, url: "https://worldmanagementsurvey.org/", text: 'Cross-country survey of management behavior. By <a href="https://nbloom.people.stanford.edu/">Bloom</a>, <a href="https://www.hbs.edu/faculty/Pages/profile.aspx?facId=541712">Sadun</a> and <a href="http://mitmgmtfaculty.mit.edu/jvanreenen/">Van Reenen</a>.' }
+      - { name: Firm-Level Lobbying Activity in the U.S., url: "https://www.lobbyview.org", text: 'The best firm-level lobbying dataset available in the world. By <a href="http://web.mit.edu/insong/www/">In Song Kim</a>.' }
+      - { name: Enterprise Survey, url: "http://www.enterprisesurveys.org/", text: 'Cross-country surveys of firm behavior. By the <a href="http://www.worldbank.org/">World Bank</a>.' }
+      - { name: Antidumping, url: "https://pages.uoregon.edu/bruceb/adpage.html", text: 'Firm-specific data and documentation on U.S. antidumping. By <a href="https://pages.uoregon.edu/bruceb/welcome.html">Blonigen</a>.' }
+      - { name: Amadeus, url: "https://www.bvdinfo.com/en-gb/our-products/data/international/amadeus", text: 'European firm-level characteristics. By <a href="https://www.bvdinfo.com/en-gb">Bureau van Dijk</a>.' }
+      - { name: Orbis, url: "https://www.bvdinfo.com/en-us/our-products/data/international/orbis", text: 'Global firm-level characteristics. By <a href="https://www.bvdinfo.com/en-us">Bureau van Dijk</a>.' }
+  - heading: II. Macro
+    items:
+      - { name: Disaggregated Economic Accounts of Chile, url: "https://dataterritorios.corfo.cl/disaggregated-economic-accounts/", text: 'National accounts disaggregated geographically using administrative microdata.' }
+      - { name: Industry-level Production Dataset for the U.S., url: "http://www.nber.org/data/nbprod2005.html", text: 'By the <a href="https://www.nber.org/">NBER</a>.' }
+      - { name: Cross-Country Productivity, url: "https://www.rug.nl/ggdc/productivity/", text: 'Link to Penn World Tables, 10-Sector Database, EU Klems, among others. By the <a href="https://www.rug.nl/ggdc/">GGDC</a>.' }
+      - { name: Historical Development, url: "https://www.rug.nl/ggdc/historicaldevelopment/", text: 'Cross-country long time series on economic growth. Includes Maddison’s data. By the <a href="https://www.rug.nl/ggdc/">GGDC</a>.' }
+      - { name: World Development Indicators, url: "http://datatopics.worldbank.org/world-development-indicators/", text: 'Compilation of cross-country comparable data on development. By the <a href="http://www.worldbank.org/">World Bank</a>.' }
+      - { name: Cross-Country Historical Inequality, url: "https://wid.world/", text: 'By a team of international researchers.' }
+      - { name: World Input-Output Database, url: "http://www.wiod.org/home", text: 'By researchers from <a href="https://www.rug.nl/">Groningen</a>.' }
+      - { name: Inter-Country Input-Output Database, url: "https://www.oecd.org/en/data/datasets/inter-country-input-output-tables.html", text: 'By <a href="https://www.oecd.org/en.html">OECD</a>.' }
+  - heading: III. Institutions
+    items:
+      - { name: Doing Business Survey, url: "http://www.doingbusiness.org/en/doingbusiness", text: 'Cross-country survey of business regulations. By the <a href="http://www.worldbank.org/">World Bank</a>.' }
+      - { name: Worldwide Governance Indicators, url: "http://info.worldbank.org/governance/wgi/index.aspx#home", text: 'Cross-country governance survey to citizens, firms and experts. By <a href="https://resourcegovernance.org/about-us/daniel-kaufmann">Kaufmann</a> and <a href="https://sites.google.com/site/aartkraay/home">Kray</a>.' }
+  - heading: IV. International Trade
+    items:
+      - { name: Exporter Dynamics Dataset, url: "https://datacatalog.worldbank.org/dataset/exporter-dynamics-database", text: 'Cross-country characteristics of firm-level exporter dynamics. By the <a href="http://www.worldbank.org/">World Bank</a>.' }
+      - { name: Harmonized International Trade at Product and Country-level, url: "http://www.cepii.fr/CEPII/en/bdd_modele/presentation.asp?id=1", text: 'By <a href="http://www.cepii.fr/CEPII/en/welcome.asp">CEPII</a>.' }
+      - { name: Trade Elasticities, url: "http://www.columbia.edu/~dew35/TradeElasticities/TradeElasticities.html", text: 'By <a href="http://christianbroda.com/">Broda</a> and <a href="http://blogs.cuit.columbia.edu/dew35/">Weinstein</a>.' }
+      - { name: Non-Tariff Barriers, url: "http://www.nber.org/ftp/pub/trefler/NTB/", text: 'By <a href="http://www-2.rotman.utoronto.ca/~dtrefler/">Trefler</a>.' }
+  - heading: V. Politics
+    items:
+      - { name: Campaign finance in the U.S., url: "https://www.fec.gov/data/", text: 'By the <a href="https://www.fec.gov/">Federal Electoral Commission of the U.S</a>.' }
+      - { name: Nominates Scores, url: "https://voteview.com/", text: 'Historical dataset of congress member vote behavior in the U.S. By <a href="https://spia.uga.edu/faculty-member/keith-poole/">Poole</a> and <a href="http://as.nyu.edu/politics/directory.howard-l-rosenthal.html">Rosenthal</a>.' }
+      - { name: Lobbying, url: "https://www.lobbyview.org/", text: 'Comprehensive data on interest group politics in the US assembled by <a href="https://web.mit.edu/insong/www/">In Song Kim</a>.' }
+  - heading: VI. Diverse Purposes
+    items:
+      - { name: World Bank Datasets, url: "https://data.worldbank.org/", text: 'Development cross-country datasets.' }
+      - { name: Global Barometer, url: "https://www.globalbarometer.net/", text: 'Cross-country surveys of political, economical and social behavior.' }
+      - { name: NBER Datasets, url: "http://www.nber.org/data/", text: 'Macro, finance, trade, labor health, demographics. You name it.' }
+      - { name: CEPII Datasets, url: "http://www.cepii.fr/CEPII/en/bdd_modele/bdd.asp", text: 'Macro, trade, geography, productivity.' }
+      - { name: GGDC Datasets, url: "https://www.rug.nl/ggdc/", text: 'Macro, productivity, global value chains, historical development. The best source for global macro datasets.' }
+      - { name: ICPSR Datasets, url: "https://www.icpsr.umich.edu/icpsrweb/", text: 'Massive and collective compilation of all purpose datasets.' }

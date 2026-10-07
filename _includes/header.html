@@ -1,0 +1,31 @@
+{% assign nav = site.data.navigation %}
+<header id="header" class="site-header">
+  <div class="header-inner">
+    <nav class="nav-left" aria-label="Primary">
+      {% for item in nav.left %}<a href="{{ item.url | relative_url }}" data-section="{{ item.url | split:'#' | last }}">{{ item.label }}</a>{% endfor %}
+    </nav>
+    <a class="site-title" href="{{ '/' | relative_url }}">{{ site.title }}</a>
+    <nav class="nav-right" aria-label="Primary continued">
+      {% for item in nav.right %}<a href="{{ item.url | relative_url }}" data-section="{{ item.url | split:'#' | last }}">{{ item.label }}</a>{% endfor %}
+    </nav>
+    <button class="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="overlay-nav">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<!-- compact bar that appears once you scroll past the photos -->
+<div id="sticky-nav" class="sticky-nav" aria-hidden="true">
+  <nav>
+    {% for item in nav.left %}<a href="{{ item.url | relative_url }}" data-section="{{ item.url | split:'#' | last }}">{{ item.label }}</a>{% endfor %}
+    {% for item in nav.right %}<a href="{{ item.url | relative_url }}" data-section="{{ item.url | split:'#' | last }}">{{ item.label }}</a>{% endfor %}
+  </nav>
+</div>
+
+<!-- mobile overlay menu -->
+<div id="overlay-nav" class="overlay-nav" hidden>
+  <nav>
+    {% for item in nav.left %}<a href="{{ item.url | relative_url }}">{{ item.label }}</a>{% endfor %}
+    {% for item in nav.right %}<a href="{{ item.url | relative_url }}">{{ item.label }}</a>{% endfor %}
+  </nav>
+</div>

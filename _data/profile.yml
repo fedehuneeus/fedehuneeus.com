@@ -1,0 +1,35 @@
+# ---------------------------------------------------------------
+# ABOUT section + header/footer details.  Plain text; HTML allowed.
+# ---------------------------------------------------------------
+name: Federico Huneeus
+tagline: "Welcome! I am a trade economist specializing in productivity, inequality, and production networks."
+portrait: /assets/img/portrait.jpg
+
+positions:
+  - 'Assistant professor at the <a href="https://econ.duke.edu">Economics Department</a> of <a href="https://duke.edu">Duke University</a>'
+  - 'Senior economist at the Research Department of the <a href="https://www.bcentral.cl/en/web/central-bank-of-chile/home">Central Bank of Chile</a>'
+  - 'Postdoctoral associate at the <a href="https://cowles.yale.edu/">Cowles Foundation</a> of <a href="https://economics.yale.edu/">Yale University</a>'
+  - 'Ph.D. in <a href="https://economics.princeton.edu/">Economics</a> from <a href="https://www.princeton.edu/">Princeton University</a>'
+  - 'Member of <a href="https://www.cesifo.org/en">CESifo</a> and <a href="https://www.innovationgrowthlab.org/">IGL</a> Research Networks'
+
+primary_field: Trade
+secondary_fields: Macroeconomics, Industrial Organization
+cv: /s/cv/CV_FHL.pdf
+
+email: federico.huneeus@duke.edu
+phone: "+1 (919) 660-1800"
+address: "213 Social Sciences, 419 Chapel Drive, Box 90097. Durham, N.C. 27708-0097, USA"
+also_at: 'Also at the <a href="https://www.bcentral.cl/en/web/central-bank-of-chile/home">Central Bank of Chile</a>, 1180 Agustinas, Santiago, Chile · fhuneeus@bcentral.cl'
+
+# Social icons (shown under the portrait and in the footer)
+social:
+  - { name: LinkedIn,       icon: linkedin, url: "http://www.linkedin.com/in/federico-huneeus" }
+  - { name: Email,          icon: email,    url: "mailto:fedehuneeus@gmail.com" }
+  - { name: Google Scholar, icon: scholar,  url: "https://scholar.google.com/citations?user=pWlzpgsAAAAJ&hl=en" }
+  - { name: RePEc,          icon: repec,    url: "https://authors.repec.org/pro/phu356/" }
+
+# Footer line (bottom of every page)
+footer:
+  address: "Duke University, Department of Economics, 213 Social Sciences, Durham, NC 27708, USA"
+  phone: "+1 (919) 660-1800"
+  email: federico.huneeus@duke.edu

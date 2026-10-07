@@ -1,0 +1,11 @@
+# Menu items, in order. Left/right refers to the split around the name in the
+# header over the photos; the sticky bar shows them all in one row.
+left:
+  - { label: About,       url: "/#about" }
+  - { label: Research,    url: "/#research" }
+  - { label: Discussions, url: "/#discussions" }
+right:
+  - { label: Policy,      url: "/#policy" }
+  - { label: References,  url: "/#references" }
+  - { label: Teaching,    url: "/#teaching" }
+  - { label: Data,        url: "/data/" }

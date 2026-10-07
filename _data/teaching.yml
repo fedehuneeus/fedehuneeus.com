@@ -1,0 +1,24 @@
+# TEACHING — groups of courses, then pre-doctoral work.
+groups:
+  - heading: 'I. <a href="https://econ.duke.edu/">Duke</a> - graduate teaching'
+    courses:
+      - { name: ECON 828 Advanced Topics in International Trade,            syllabus: /s/teaching/Syllabus_InternationalTrade2_2026_Spring_251030.pdf }
+      - { name: "Econ 890 Methods in Trade, Macro and Industrial Organization", syllabus: /s/teaching/Syllabus_Methods_2026_Spring_260301.pdf }
+  - heading: 'II. <a href="https://econ.duke.edu/">Duke</a> - undergraduate teaching'
+    courses:
+      - { name: ECON 355/288 International Trade, syllabus: /s/teaching/Syllabus_355_InternationalTrade_2026_Spring.pdf }
+
+predoctoral:
+  - title: A Multidimensional Employment Quality Index for Brazil 2002-11
+    pdf: "https://onlinelibrary.wiley.com/doi/abs/10.1111/j.1564-913X.2015.00239.x"
+    authors:
+      - { name: Oscar Landerretche, url: "http://www.fen.uchile.cl/es/academicos-investigacion/directorio-de-academicos/detalle/oscar-landerretche" }
+      - { name: Esteban Puentes,    url: "https://sites.google.com/site/estebanepuentes/" }
+      - { name: Javiera Selman,     url: "https://www.linkedin.com/in/javiera-selman-a8156149/" }
+    journal: International Labour Review (2015)
+  - title: "Multidimensional Measure of Job Quality: Persistence and Heterogeneity in a Developing Country"
+    pdf: /s/research/master_thesis.pdf
+    authors:
+      - { name: Oscar Landerretche, url: "http://www.fen.uchile.cl/es/academicos-investigacion/directorio-de-academicos/detalle/oscar-landerretche" }
+      - { name: Esteban Puentes,    url: "https://sites.google.com/site/estebanepuentes/" }
+    journal: Masters Thesis (2012)

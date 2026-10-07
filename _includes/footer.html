@@ -1,0 +1,10 @@
+{% assign f = site.data.profile.footer %}
+<footer id="footer">
+  <div class="pre-footer">
+    {% include social.html class="social-light" %}
+    <a class="back-to-top" href="#header">Back To Top</a>
+  </div>
+  <div class="site-info">
+    <span>{{ f.address }}</span><span>{{ f.phone }}</span><a href="mailto:{{ f.email }}">{{ f.email }}</a>
+  </div>
+</footer>

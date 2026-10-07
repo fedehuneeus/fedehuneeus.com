@@ -1,0 +1,13 @@
+<section id="references" class="index-section">
+  <div class="content">
+    <h2>References</h2>
+    <div class="ref-grid">
+      {% for r in site.data.references %}
+      <div class="ref">
+        <p class="paper-title"><a href="{{ r.url }}" target="_blank" rel="noopener">{{ r.name }}</a></p>
+        <p class="ref-affiliation">{{ r.affiliation }}</p>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>

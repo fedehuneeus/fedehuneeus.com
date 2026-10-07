@@ -1,0 +1,15 @@
+{% assign hero = site.data.hero %}
+<section id="home" class="hero" data-interval="{{ hero.interval_seconds | default: 6 }}">
+  <div class="hero-slides">
+    {% for s in hero.slides %}
+    <div class="hero-slide{% if forloop.first %} is-active{% endif %}" style="background-image:url('{{ s.image | relative_url }}')" role="img" aria-label="{{ s.alt }}"></div>
+    {% endfor %}
+  </div>
+  <div class="hero-overlay"></div>
+  {% if hero.tagline and hero.tagline != "" %}<p class="hero-tagline">{{ hero.tagline }}</p>{% endif %}
+  <button class="hero-arrow hero-prev" aria-label="Previous photo"></button>
+  <button class="hero-arrow hero-next" aria-label="Next photo"></button>
+  <div class="hero-dots" role="tablist">
+    {% for s in hero.slides %}<button class="hero-dot{% if forloop.first %} is-active{% endif %}" aria-label="Photo {{ forloop.index }}"></button>{% endfor %}
+  </div>
+</section>

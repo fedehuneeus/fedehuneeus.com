@@ -1,0 +1,28 @@
+---
+layout: default
+title: Page not found
+permalink: /404.html
+body_class: page
+sitemap: false
+---
+<section id="notfound" class="index-section page-section">
+  <div class="content">
+    <h2>Page not found</h2>
+    <p id="nf-text">The page you asked for does not exist. <a href="{{ '/' | relative_url }}">Go to the home page</a>.</p>
+  </div>
+</section>
+<script>
+/* Files used to live directly under /s/. If someone follows an old link such as
+   /s/AHM.pdf, send them to the file's new location under /s/<topic>/. */
+(function () {
+  var map = {
+  {%- for f in site.static_files %}{% if f.path contains '/s/' %}
+    "{{ f.name }}": "{{ f.path | relative_url }}",{% endif %}{% endfor %}
+  };
+  var m = location.pathname.match(/^\/s\/([^\/]+)$/);
+  if (m && map[decodeURIComponent(m[1])]) {
+    document.getElementById('nf-text').textContent = 'This file has moved. Redirecting\u2026';
+    location.replace(map[decodeURIComponent(m[1])]);
+  }
+})();
+</script>

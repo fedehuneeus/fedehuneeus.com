@@ -1,0 +1,13 @@
+# Photos of the slideshow at the top of the home page (in order).
+# Drop a new JPG in assets/img/ and add a line here.
+interval_seconds: 6
+# One line shown over the photos, under the name. Leave empty ("") to hide it.
+tagline: "Trade economist · Duke University · Central Bank of Chile"
+slides:
+  - { image: /assets/img/hero-cordillera.jpg, alt: "Cordillera de los Andes, Santiago" }
+  - { image: /assets/img/hero-duke.jpg,       alt: "Duke University Chapel, Durham" }
+  - { image: /assets/img/hero-bcch-1930.jpg,  alt: "Central Bank of Chile building, 1930" }
+  - { image: /assets/img/hero-bcch.jpg,       alt: "Central Bank of Chile" }
+  - { image: /assets/img/hero-princeton.jpg,  alt: "Nassau Hall, Princeton University" }
+  - { image: /assets/img/hero-yale.jpg,       alt: "Sterling Library, Yale University" }
+  - { image: /assets/img/hero-fen.jpg,        alt: "Facultad de Economía y Negocios, Universidad de Chile" }

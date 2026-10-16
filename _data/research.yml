@@ -53,6 +53,14 @@ working_papers:
     extra:
       - 'Old version material: <a href="https://www.nber.org/papers/w29774">NBER Working Paper 29774</a> | <a href="https://www.bcentral.cl/en/content/-/details/working-papers-n-942">Central Bank Working Paper 942</a> | <a href="http://documents.worldbank.org/curated/en/874031644864101145/The-Distribution-of-Crisis-Credit-Effects-on-Firm-Indebtedness-and-Aggregate-Risk">World Bank Working Paper 9937</a> | <a href="/s/research/HKLSV_slides_handout_220107.pdf">15-minutes Slides</a> | <a href="/s/research/HKLSV_slides_handout_220505.pdf">1-hour Slides</a>'
 
+  - title: The Geographic and Sectoral Impact of Productivity
+    pdf: /s/research/HdV.pdf
+    authors:
+      - { name: Miguel del Valle, url: "https://madelvallef.github.io/" }
+    links:
+      - { label: Disaggregated Economic Accounts of Chile, url: "https://dataterritorios.corfo.cl/disaggregated-economic-accounts/" }
+    status: "Revision requested at the <em>Journal of International Economics</em>"
+
   - title: Labor Hoarding Policies Can Trigger Creative Destruction
     pdf: /s/research/AFGH.pdf
     authors:
@@ -66,14 +74,6 @@ working_papers:
     authors:
       - { name: Yasutaka Koike-Mori, url: "https://yasutakakoike-mori.com/" }
       - { name: Antonio Martner,     url: "https://amartner.github.io/" }
-    status: Submitted
-
-  - title: The Geographic and Sectoral Impact of Productivity
-    pdf: /s/research/HdV.pdf
-    authors:
-      - { name: Miguel del Valle, url: "https://madelvallef.github.io/" }
-    links:
-      - { label: Disaggregated Economic Accounts of Chile, url: "https://dataterritorios.corfo.cl/disaggregated-economic-accounts/" }
     status: Submitted
 
   - title: Production Network Dynamics and the Propagation of Shocks

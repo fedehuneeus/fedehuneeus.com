@@ -116,7 +116,6 @@ body.page .sticky-nav { display: none; }
 
 /* ---------- content sections ---------- */
 .index-section { background: var(--bg-section); }
-.index-section + .index-section { border-top: 1px solid #ececec; }
 .content { max-width: var(--content-max); margin: 0 auto; padding: 68px 34px; }
 h2 {
   margin: 0 0 .5em; color: var(--heading);

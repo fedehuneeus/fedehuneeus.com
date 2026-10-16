@@ -142,7 +142,7 @@ h3 a { font-weight: 700; }
 .paper:last-child { margin-bottom: 0; }
 .paper > :last-child { margin-bottom: 0; }   /* no stray space after the last line of an entry */
 .paper-title { margin: 0 0 .5em; font-weight: 700; text-transform: uppercase; }
-.paper-title a { font-weight: 700; }
+.paper-title a, .entry-title { font-weight: 700; text-transform: uppercase; }   /* every entry title: bold capitals */
 .paper-date { color: var(--text-muted); font-weight: 400; text-transform: none; }
 .paper-meta, .paper-extra, .paper-award, .paper-summary { margin: 0 0 .5em; }
 .paper-abstract { margin-top: .3em; }

@@ -5,7 +5,7 @@
     {% for g in t.groups %}
     <h3>{{ g.heading }}</h3>
     <ul class="plain-list course-list">
-      {% for c in g.courses %}<li><a href="{{ c.syllabus | relative_url }}">{{ c.name }}</a></li>{% endfor %}
+      {% for c in g.courses %}<li><a class="entry-title" href="{{ c.syllabus | relative_url }}">{{ c.name }}</a></li>{% endfor %}
     </ul>
     {% endfor %}
 

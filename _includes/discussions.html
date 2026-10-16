@@ -3,7 +3,7 @@
     <h2>Discussions</h2>
     <ul class="plain-list discussion-list">
       {% for d in site.data.discussions %}
-      <li><a href="{{ d.pdf | relative_url }}">{{ d.title }}</a> | {{ d.venue }} | {{ d.year }}{% for e in d.extra %} | <a href="{{ e.url | relative_url }}">{{ e.label }}</a>{% endfor %}</li>
+      <li><a class="entry-title" href="{{ d.pdf | relative_url }}">{{ d.title }}</a> | {{ d.venue }} | {{ d.year }}{% for e in d.extra %} | <a href="{{ e.url | relative_url }}">{{ e.label }}</a>{% endfor %}</li>
       {% endfor %}
     </ul>
   </div>

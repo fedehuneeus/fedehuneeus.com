@@ -10,6 +10,7 @@
   year: 2026
   extra:
     - { label: Versión interactiva, url: /s/discussions/laminas_ffrench_interactiva.html }
+    - { label: Video de la presentación, url: "https://www.youtube.com/live/F66x6VtQdMc" }  # Claude
 - title: The Labor Market Consequences of a Rapid Climate Transition
   pdf: /s/discussions/discussion_atlantafed_251113.pdf
   venue: Atlanta Fed Macro Dynamics Conference

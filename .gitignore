@@ -4,3 +4,6 @@ _site/
 .sass-cache/
 .DS_Store
 vendor/
+
+# local secrets, never publish
+cloudflare/

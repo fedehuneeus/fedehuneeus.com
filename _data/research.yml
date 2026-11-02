@@ -58,6 +58,7 @@ working_papers:
     authors:
       - { name: Miguel del Valle, url: "https://madelvallef.github.io/" }
     links:
+      - { label: Slides, url: /s/research/HdV_slides.html }
       - { label: Disaggregated Economic Accounts of Chile, url: "https://dataterritorios.corfo.cl/disaggregated-economic-accounts/" }
     status: "Revision requested at the <em>Journal of International Economics</em>"
 

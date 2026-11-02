@@ -23,7 +23,7 @@ working_papers:
     links:
       - { label: Appendix, url: /s/research/AHM_appendix.pdf }
       - { label: Slides,   url: /s/research/AHM_slides.pdf }
-    status: "Revision requested at the <em>American Economic Review</em>"
+    status: "Revision requested at the <strong>American Economic Review</strong>"
 
   - title: The Effects of Firms' Lobbying on Resource Misallocation
     pdf: /s/research/misallocation.pdf
@@ -31,7 +31,7 @@ working_papers:
       - { name: In Song Kim, url: "http://web.mit.edu/insong/www/" }
     links:
       - { label: Slides, url: /s/research/HK_uandes2022.pdf }
-    status: "Reject and resubmit at the <em>American Economic Review</em>"
+    status: "Reject and resubmit at the <strong>American Economic Review</strong>"
 
   - title: Earnings Inequality in Production Networks
     pdf: /s/research/HKL.pdf
@@ -40,7 +40,7 @@ working_papers:
       - { name: Kevin Lim,  url: "https://sites.google.com/site/limkvn/" }
     links:
       - { label: Slides, url: /s/research/HKL_slides_May2023.pdf }
-    status: "Revised and resubmitted at <em>The Review of Economics and Statistics</em>"
+    status: "Revised and resubmitted at <strong>The Review of Economics and Statistics</strong>"
 
   - title: Crisis Credit, Employment Protection, Indebtedness and Risk
     pdf: /s/research/HKLSV.pdf
@@ -49,7 +49,7 @@ working_papers:
       - { name: Mauricio Larrain, url: "https://sites.google.com/site/mauriciolarrainerrazuriz/" }
       - { name: Sergio Schmukler, url: "https://sites.google.com/site/sschmukler/home" }
       - { name: Mario Vera,       url: "https://www.linkedin.com/in/mario-vera-delgado-b771b927/" }
-    status: "Accepted for publication at <em>AEJ: Macro</em>"
+    status: "Accepted for publication at <strong>AEJ: Macro</strong>"
     extra:
       - 'Old version material: <a href="https://www.nber.org/papers/w29774">NBER Working Paper 29774</a> | <a href="https://www.bcentral.cl/en/content/-/details/working-papers-n-942">Central Bank Working Paper 942</a> | <a href="http://documents.worldbank.org/curated/en/874031644864101145/The-Distribution-of-Crisis-Credit-Effects-on-Firm-Indebtedness-and-Aggregate-Risk">World Bank Working Paper 9937</a> | <a href="/s/research/HKLSV_slides_handout_220107.pdf">15-minutes Slides</a> | <a href="/s/research/HKLSV_slides_handout_220505.pdf">1-hour Slides</a>'
 
@@ -60,7 +60,7 @@ working_papers:
     links:
       - { label: Slides, url: /s/research/HdV_slides.html }
       - { label: Disaggregated Economic Accounts of Chile, url: "https://dataterritorios.corfo.cl/disaggregated-economic-accounts/" }
-    status: "Revision requested at the <em>Journal of International Economics</em>"
+    status: "Revision requested at the <strong>Journal of International Economics</strong>"
 
   - title: Labor Hoarding Policies Can Trigger Creative Destruction
     pdf: /s/research/AFGH.pdf
@@ -119,7 +119,7 @@ publications:
     links:
       - { label: Slides, url: /s/research/HR_slides.pdf }
       - { label: 60-minutes Presentation, url: "https://www.youtube.com/watch?t=99s&v=YPPXTgjDB2k" }
-    journal: "The Review of Economic Studies (2024)"
+    journal: "<strong>The Review of Economic Studies</strong> (2024)"
     extra:
       - 'Replication Material: <a href="/s/research/ReplicationJuly2023.zip">Codes and Data</a>'
       - 'Media: <a href="https://steg.cepr.org/podcasts/transforming-growth-episode-3">Non-Technical Summary Podcast</a> | <a href="https://twitter.com/FedericoHuneeus/status/1291751374431096832">Twitter Thread</a>'
@@ -132,7 +132,7 @@ publications:
       - { name: Mounu Prem,       url: "https://sites.google.com/site/fcomunozma/" }
     links:
       - { label: Slides, url: /s/research/HLLP_BGLabor_slides_230831.pdf }
-    journal: "The Journal of Law, Economics, and Organization (2023)"
+    journal: "<strong>The Journal of Law, Economics, and Organization</strong> (2023)"
 
   - title: The Internal Labor Markets of Business Groups
     pdf: "https://doi.org/10.1016/j.jcorpfin.2021.102017"
@@ -140,7 +140,7 @@ publications:
       - { name: Borja Larrain,    url: "http://economiayadministracion.uc.cl/personal/blarrain/" }
       - { name: Mauricio Larrain, url: "https://sites.google.com/site/mauriciolarrainerrazuriz/" }
       - { name: Mounu Prem,       url: "https://sites.google.com/site/fcomunozma/" }
-    journal: "Journal of Corporate Finance (2021)"
+    journal: "<strong>Journal of Corporate Finance</strong> (2021)"
 
   - title: Financing Firms in Hibernation during the COVID-19 Pandemic
     pdf: "https://www.sciencedirect.com/science/article/pii/S1572308920301406"
@@ -148,4 +148,4 @@ publications:
       - { name: Tatiana Didier,   url: "https://scholar.google.com/citations?hl=en&user=_jb3W_8AAAAJ" }
       - { name: Mauricio Larrain, url: "https://sites.google.com/site/mauriciolarrainerrazuriz/" }
       - { name: Sergio Schmukler, url: "https://sites.google.com/site/sschmukler/home" }
-    journal: "Journal of Financial Stability (2020)"
+    journal: "<strong>Journal of Financial Stability</strong> (2020)"

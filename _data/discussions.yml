@@ -1,5 +1,11 @@
 # DISCUSSIONS — one entry per discussion, newest first.
 # Fields: title, pdf, venue, year, extra (optional list of {label,url})
+- title: Economic Implications of AI  # Claude
+  pdf: /s/discussions/discussion_idb_261111.pdf
+  venue: Meeting of the Network of Central Banks and Finance Ministries of Latin America and The Caribbean
+  year: 2026
+  extra:
+    - { label: AI Dashboard, url: /s/research/ai_latinamerica_dashboard.html }
 - title: Aggregate Productivity and Microdata
   pdf: /s/discussions/Huneeus_GFP2026_Microdata_SettingTheScene.pdf
   venue: OECD Global Forum on Productivity Annual Conference

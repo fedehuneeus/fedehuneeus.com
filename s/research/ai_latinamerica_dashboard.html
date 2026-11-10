@@ -160,11 +160,11 @@ function presetParams(c, preset) {    // returns {e, q, a, sL} for a country und
   if (preset === "hard") a = (c.ef == null ? 0.93 / 1.16 : c.ef / c.e + (1 - c.ef / c.e) * D.aHard / D.a) * D.ab.a;
   return { e, q, a, sL };
 }
-function usGDP() { const p = presetParams(byIso.USA, state.preset); return D.usGDP * p.q * p.a / (D.qUS * D.a) + (state.sc ? D.ab.scale10 * mult(byIso.USA.sL, state.cap) : 0); }   // US bound under the scenario (Acemoglu's 1.16% rescaled)
+function usGDP() { const p = presetParams(byIso.USA, state.preset); return D.usGDP * p.q * p.a / (D.qUS * D.a) + (state.sc ? D.scale10 * mult(byIso.USA.sL, state.cap) : 0); }   // US bound under the scenario (Acemoglu's 1.16% rescaled)
 function mult(sL, cap) { return cap === "ces" ? 1 + D.sigmaKL * (1 - sL) / sL : 1 / sL; }
 function calc(c, p, h, cap) {
   const w = (c.w[h] == null) ? 1 : c.w[h];
-  const tfp = p.e * p.q * p.a * p.sL * w + (state.sc ? D.ab.scale10 : 0);   // scale effects: common TFP gain from frontier ideas
+  const tfp = p.e * p.q * p.a * p.sL * w + (state.sc ? D.scale10 : 0);   // scale effects: common TFP gain from frontier ideas
   return { tfp, gdp: tfp * mult(p.sL, cap), w, hasW: c.w[h] != null };
 }
 const byIso = Object.fromEntries(D.countries.map(c => [c.iso, c]));
@@ -210,7 +210,7 @@ function render() {
   const c = sel(), p = ownParams(), r = calc(c, p, state.h, state.cap);
   const years = ["2022", "2032", "2042", "2052"][state.h];
   $("kName").textContent = c.name;
-  $("kGDP").textContent = fmtP(r.gdp); $("kGDPd").textContent = `e ${fmtP(p.e, 1)} × q ${fmtP(p.q, 1)} × a ${fmtP(p.a, 0)} × multiplier ${mult(p.sL, state.cap).toFixed(2)}` + (r.hasW && state.h ? ` × weights ${years} (${fmtS((r.w - 1) * 100, 1)}%)` : "") + (state.sc ? ` + scale effects (${fmtP(D.ab.scale10)} of TFP)` : "");
+  $("kGDP").textContent = fmtP(r.gdp); $("kGDPd").textContent = `e ${fmtP(p.e, 1)} × q ${fmtP(p.q, 1)} × a ${fmtP(p.a, 0)} × multiplier ${mult(p.sL, state.cap).toFixed(2)}` + (r.hasW && state.h ? ` × weights ${years} (${fmtS((r.w - 1) * 100, 1)}%)` : "") + (state.sc ? ` + scale effects (${fmtP(D.scale10)} of TFP)` : "");
   $("kTFP").textContent = fmtP(r.tfp); $("kTFPd").textContent = `× labor share ${p.sL.toFixed(2)}`;
   $("kYr").textContent = fmtS(r.gdp * 10, 2).replace("+", "") + " pp"; $("kYrd").textContent = `of annual GDP growth; the IT revolution: ${D.it.sa.toFixed(1)} pp a year in Latin America, ${D.it.us.toFixed(1)} in the US`;
   $("kUS").textContent = Math.round(100 * r.gdp / usGDP()) + "%"; $("kUSd").textContent = `US, same scenario: ${fmtP(usGDP(), 2)} of GDP (Acemoglu 2025: 1.16%)`;

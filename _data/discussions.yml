@@ -2,7 +2,7 @@
 # Fields: title, pdf, venue, year, extra (optional list of {label,url})
 - title: Economic Implications of AI  # Claude
   pdf: /s/discussions/discussion_idb_261111.pdf
-  venue: Meeting of the Network of Central Banks and Finance Ministries of Latin America and The Caribbean
+  venue: Meeting of the Network of Central Banks and Finance Ministries of LATAM  # Claude
   year: 2026
   extra:
     - { label: AI Dashboard, url: /s/research/ai_latinamerica_dashboard.html }
